@@ -7,4 +7,6 @@
 *.sublime*
 
 node_modules/
+package.json
+gulpfile.js
 Thumbs.db
