@@ -1,0 +1,16 @@
+/*======================================
+=            card-slideshow            =
+======================================*/
+
+.card-slideshow {
+	@media screen and (max-width: 992px) {
+        margin-bottom: 30px;
+    }
+    @media screen and (max-width: 480px) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+/*=====  End of card-slideshow  ======*/

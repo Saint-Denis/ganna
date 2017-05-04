@@ -1,0 +1,83 @@
+/*=======================================
+=            responsive-tabs            =
+=======================================*/
+
+.r-tabs .r-tabs-panel {
+    padding: 15px;
+    display: none;
+}
+
+.r-tabs .r-tabs-accordion-title {
+    display: none;
+}
+
+.r-tabs .r-tabs-panel.r-tabs-state-active {
+    display: block;
+}
+
+.tabs__controls-item.r-tabs-tab.r-tabs-state-active {
+  	background: #fdeabe;
+    @include transition(background);
+}
+
+
+/* Accordion responsive breakpoint */
+
+@media only screen and (max-width: 768px) {
+    .r-tabs .r-tabs-nav {
+        display: none;
+    }
+    .r-tabs .r-tabs-accordion-title {
+        display: block;
+    }
+}
+
+
+
+
+
+
+/* Accordion anchor */
+
+.r-tabs .r-tabs-accordion-title .r-tabs-anchor {
+    display: block;
+    padding: 10px;
+    background-color:#fdeabe;
+    
+
+    &::after {
+    	display: none;
+    }
+
+}
+
+.r-tabs-accordion-title {
+	border-top:1px solid #f9b000;
+
+	&:first-of-type {
+		border:none!important;
+	}
+}
+
+
+/* Active accordion anchor */
+
+.r-tabs .r-tabs-accordion-title.r-tabs-state-active .r-tabs-anchor {
+    background-color: #f9b000;
+    @include transition(all);
+    color:#fff;
+    
+}
+
+
+/* Disabled accordion button */
+
+.r-tabs .r-tabs-accordion-title.r-tabs-state-disabled {
+    opacity: 0.5;
+}
+
+
+
+
+
+/*=====  End of responsive-tabs  ======*/

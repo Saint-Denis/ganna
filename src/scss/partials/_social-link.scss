@@ -1,0 +1,38 @@
+/*===================================
+=            social-link            =
+===================================*/
+.social-link svg {
+	width: 40px;
+	height:40px;
+	fill:#f0f0f0;
+	@include transition(fill);
+
+}
+
+
+.social-link .fb {
+	fill:#4f4d9c;
+}
+
+.social-link .ok {
+	fill:#ee8208;
+}
+
+.social-link .vk {
+	fill:#6373c5;
+}
+
+
+.social-link--ok:hover svg {
+	fill:#ee8208;
+	@include transition(fill);
+}
+
+.social-link--vk:hover svg,
+.social-link--fb:hover svg, {
+	fill:#4f4d9c;
+	@include transition(fill);
+}
+
+
+/*=====  End of social-link  ======*/

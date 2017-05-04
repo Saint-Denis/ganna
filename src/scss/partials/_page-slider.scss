@@ -1,0 +1,97 @@
+/*===================================
+=            page-slider            =
+===================================*/
+
+.page-slider {
+    margin-bottom:20px;
+
+
+	.slick-prev {
+		left:-10px;
+		z-index: 20;
+
+	
+	}
+    .slick-prev::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left:0px;
+        transform: translateY(-50%);
+        width: 18px;
+        height: 30px;
+        background: url("../assets/img/icons/arrow-prev.png") no-repeat 0 0;
+        z-index: 50;
+    }
+    .slick-prev::after {
+        content: "";
+        position: absolute;
+        width: 46px;
+        height: 76px;
+        top: 50%;
+        left: -13px;
+        background: #f9b000;
+        transform: translateY(-50%);
+        z-index: 20;
+        transition:background 0.3s ease-in;
+    }
+
+    .slick-prev:hover {
+        &::after {
+            background:#fcc540;
+            transition:background 0.3s ease-in;
+        }
+    }
+
+
+
+    .slick-next {
+		right: -10px;
+		z-index: 20;
+
+	}
+
+    .slick-next::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right:0px;
+        transform: translateY(-50%);
+        width: 18px;
+        height: 30px;
+        background: url("../assets/img/icons/arrow-next.png") no-repeat 0 0;
+        z-index: 50;
+        
+    }
+    .slick-next::after {
+        content: "";
+        position: absolute;
+        width: 46px;
+        height: 76px;
+        top: 50%;
+        right:-13px;
+        background: #f9b000;
+        transform: translateY(-50%);
+        z-index: 20;
+        transition:background 0.3s ease-in;
+    }
+
+     .slick-next:hover {
+        &::after {
+            background:#fcc540;
+            transition:background 0.3s ease-in;
+        }
+    }
+}
+.page-slider__slide {
+    min-height:480px;
+    height: auto;
+    background-size:cover!important;
+
+    @media screen and (max-width:767px) {
+        min-height:220px;
+    }
+}
+
+
+/*=====  End of page-slider  ======*/

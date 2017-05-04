@@ -1,0 +1,36 @@
+/*===========================
+=            btn            =
+===========================*/
+.btn {
+	@include font-size(17px,30px);
+	@include inline-block(middle);
+	color:#000;
+	background:$btnBg;
+	padding:6px 16px 8px 14px;
+	@include transition(background);
+	border:none;
+	outline:none;
+	cursor:pointer;
+
+	@media screen and (max-width:360px) {
+		width: 100%;
+		text-align:center;
+	}
+
+	&::after {
+		display: none!important;
+	}
+
+	&:hover {
+		background:$btnHover;
+		@include transition(background);
+	}
+
+	&:active {
+		background:$btnActive;
+		@include transition(background);
+	}
+}
+
+
+/*=====  End of btn  ======*/

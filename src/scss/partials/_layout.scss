@@ -1,0 +1,19 @@
+/*==============================
+=            layout            =
+==============================*/
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+
+    &--product {
+    	.container-fluid {
+    		padding-right:15px;
+    	}
+    }
+}
+
+
+/*=====  End of layout  ======*/

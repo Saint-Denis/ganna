@@ -1,0 +1,109 @@
+/*===================================
+=            page-select            =
+===================================*/
+
+.sod_select {
+    border: 1px solid #bababa;
+    @include font-size(17px, 24px);
+    text-transform: none;
+    font-weight: 400;
+    padding: 11px 15px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.sod_select.focus {
+    box-shadow: none;
+}
+
+.sod_select:hover,
+.sod_select.open,
+.sod_select.focus {
+    border: 1px solid #bababa;
+}
+
+.sod_select .sod_list_wrapper {
+    border: 1px solid #bababa;
+    margin: 0 0 0 -1px;
+    width: 100.6%;
+     max-width: 100.6%;
+}
+
+.sod_select .sod_list {
+    max-height: 135px;
+}
+
+.sod_select .sod_option.selected {
+    font-weight: 400;
+    background: #fdeabe;
+}
+
+.sod_select .sod_option {
+    padding: 11px 15px;
+    @include transition(background);
+    &:hover {
+        background: #fdeabe;
+        @include transition(background);
+        color: #000;
+    }
+}
+
+.sod_select .sod_option.selected::before {
+    display: none;
+}
+
+.sod_select.above .sod_list_wrapper {
+    border-top: 1px solid #bababa;
+}
+
+.sod_select::before {
+    display: none;
+}
+
+.sod_select::after {
+    content: '';
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: auto;
+    width: 6px;
+    height: 4px;
+    transform: rotate(0);
+    transition: transform 0.3s ease-in;
+    background: url("../assets/img/icons/arrow-down.png") no-repeat 0 0;
+}
+
+.sod_select.open::after {
+    transform: rotate(180deg);
+}
+
+//Кастомный скролл
+.mCSB_dragger {
+    height: 13px!important;
+    min-height: 10px!important;
+    right: -4px;
+}
+
+.mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #f9b000!important;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    border-radius: 0!important;
+}
+
+.mCSB_inside > .mCSB_container {
+    margin-right: 0!important;
+    margin-bottom: 15px!important;
+}
+
+.mCS-dark.mCSB_scrollTools .mCSB_draggerRail {
+    background-color: rgba(0, 0, 0, 0)!important;
+}
+
+.mCSB_scrollTools {
+    opacity: 1;
+}
+
+
+/*=====  End of page-select  ======*/

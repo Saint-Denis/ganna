@@ -1,0 +1,130 @@
+/*=============================
+=            Mixin            =
+=============================*/
+
+//Шрифты
+@mixin font-source-sans($size: false, $colour: false, $weight: false, $lh: false) {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    @if $size {
+        font-size: $size;
+    }
+    @if $colour {
+        color: $colour;
+    }
+    @if $weight {
+        font-weight: $weight;
+    }
+    @if $lh {
+        line-height: $lh;
+    }
+}
+
+//Шрифты
+@mixin cormac($style:regular) {
+    @if $style==black {
+        font-family: "cormac-black", Arial, sans-serif;
+    }
+    @if $style==extralight {
+        font-family: "cormac-extralight", Arial, sans-serif;
+    }
+}
+
+
+//Шрифты
+
+/*@mixin font-size($sizeValue: 16, $line: $sizeValue * 1.5) {
+    font-size: ($sizeValue) + px;
+    line-height: ($line) + px;
+    font-size: ($sizeValue / 16) + rem;
+    line-height: ($line / 16) + rem;
+}*/
+
+@mixin transition($what) {
+    transition:$what 0.3s ease-in;
+}
+
+@mixin font-size($sizeValue, $line:27px) {
+    font-size: $sizeValue;
+    line-height: $line;
+}
+
+@mixin inline-block($vertical:top) {
+    display: inline-block;
+    vertical-align: $vertical;
+}
+
+//Клеарфикс
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+//Соц иконки
+@each $socials in (vk, fb, tw) {
+    .social-icon--#{$socials} {
+        background:url(../assets/img/icons/#{$socials}.png) no-repeat 0 0;
+    }
+}
+
+//Треугодник
+
+/*example:
+    .element {
+        &::before {
+            @include css-triangle(blue, down);
+        }
+    }
+
+*/
+
+@mixin triangle($direction, $color: currentcolor, $size: 1em) {
+  @if not index(top right bottom left, $direction) {
+    @error "Direction must be either `top`, `right`, `bottom` or `left`.";
+  }
+
+  width: 0;
+  height: 0;
+  content: '';
+  z-index: 2;
+  border-#{opposite-position($direction)}: ($size * 1.5) solid $color;
+  
+  $perpendicular-borders: $size solid transparent;
+  
+  @if $direction == top or $direction == bottom {
+    border-left:   $perpendicular-borders;
+    border-right:  $perpendicular-borders;
+  } @else if $direction == right or $direction == left {
+    border-bottom: $perpendicular-borders;
+    border-top:    $perpendicular-borders;
+  }
+}
+
+@function opposite-direction($directions) {
+  $opposite-directions: ();
+  $direction-map: (
+    'top':    'bottom',
+    'right':  'left',
+    'bottom': 'top',
+    'left':   'right',
+    'center': 'center',
+    'ltr':    'rtl',
+    'rtl':    'ltr'
+  );
+ 
+  @each $direction in $directions {
+    $direction: to-lower-case($direction);
+    
+    @if map-has-key($direction-map, $direction) { 
+      $opposite-directions: append($opposite-directions, unquote(map-get($direction-map, $direction)));
+    } @else {
+      @warn "No opposite direction can be found for `#{$direction}`. Direction omitted.";
+    }
+  }
+ 
+  @return $opposite-directions;
+}
+
+/*=====  End of Mixin  ======*/

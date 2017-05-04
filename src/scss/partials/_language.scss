@@ -1,0 +1,70 @@
+/*================================
+=            language            =
+================================*/
+
+.language {
+    position: relative;
+    max-width: 95px;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 2px;
+        background: $grey;
+        top: 58%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+     @media screen and (max-width:1110px) {
+        max-width: 100%;
+     }
+
+    @media screen and (max-width:767px) {
+        width:50%;
+        float:right;
+        max-width: 95px;
+        margin-top: 15px;
+        &::before {
+             top: 48%;
+             left: 47%;
+        }
+    }
+}
+
+a.language__link {
+    position: relative;
+    color: #000;
+    border-bottom: 1px solid transparent;
+    @include transition(width);
+    @include font-size(17px);
+    &--active {
+        color: $grey;
+    }
+    &:nth-of-type(1) {
+        margin-right: 33px;
+    }
+    border-bottom:1px solid transparent;
+    @include transition(border-bottom);
+
+    &:hover {
+        border-bottom:1px solid $linkColor;
+        @include transition(border-bottom);
+        @media screen and (max-width: 1110px) {
+              border-bottom:1px solid transparent;
+              text-decoration:none;
+        }
+    }
+
+    @media screen and (max-width:1110px) {
+          @include font-size(20px, 1);
+    }
+
+     @media screen and (max-width:767px) {
+         @include font-size(18px);
+
+    }
+}
+
+
+/*=====  End of language  ======*/

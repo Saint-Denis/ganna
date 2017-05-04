@@ -1,0 +1,58 @@
+/*===================================
+=            card-slider            =
+===================================*/
+
+.card-slider {
+    width: 464px;
+    max-width: 464px;
+    @media screen and (max-width: 1060px) {
+        width: 350px;
+        max-width: 350px;
+    }
+    @media screen and (max-width:992px) {
+        width: 100%;
+        max-width: 100%;
+    }
+    @media screen and (max-width:480px) {
+        order: 2;
+    }
+    &::before {
+        content: "Новинка";
+        position: absolute;
+        top: -18px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include font-size(17px, 27px);
+        padding: 4px 9px;
+        background: #e30613;
+        color: #fff;
+        z-index: 50;
+        @media screen and (max-width: 480px) {
+            display: none;
+        }
+    }
+}
+
+.card-slider__slide {
+    width: 470px;
+    max-width: 470px;
+    height: 350px;
+    max-height: 350px;
+    background: #fff;
+    text-align: center;
+    @media screen and (max-width: 992px) {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    @media screen and (max-width: 480px) {
+            height: 250px;
+     }
+    img {
+        @include inline-block(middle);
+        height: 100%;
+    }
+}
+
+
+/*=====  End of card-slider  ======*/

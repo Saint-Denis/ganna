@@ -1,0 +1,44 @@
+/*=====================================
+=            contacts-link            =
+=====================================*/
+
+a.contacts-link {
+    position: relative;
+    @include font-size(17px, 30px);
+    @include inline-block(middle);
+    color: #000;
+	@include transition(width);
+	margin-right: 54px;
+
+    border-bottom:1px solid transparent;
+    @include transition(border-bottom);
+
+    &:hover {
+        border-bottom:1px solid $linkColor;
+        @include transition(border-bottom);
+        @media screen and (max-width: 1110px) {
+              border-bottom:1px solid transparent;
+              text-decoration:none;
+        }
+    }
+
+	@media screen and (max-width:1300px) {
+		margin-right:0px;
+	}
+
+    @media screen and (max-width:1110px) {
+          @include font-size(20px, 1);
+
+    }
+
+	@media screen and (max-width:767px) {
+         @include font-size(18px);
+         width:50%;
+         margin-top: 15px;
+         float: left;
+         clear: left;
+    }
+
+}
+
+/*=====  End of contacts-link  ======*/

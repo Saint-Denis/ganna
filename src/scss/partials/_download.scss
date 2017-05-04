@@ -1,0 +1,31 @@
+/*================================
+=            download            =
+================================*/
+
+.download {
+    display: table;
+
+}
+
+.download a.download__link {
+    position: relative;
+    @include font-size(17px,24px);
+    @include inline-block(top);
+    top: 2px;
+
+    &::after {
+        display: none;
+    }
+}
+
+.download__icons {
+    @include inline-block(top);
+
+    img {
+        width: 36px;
+        height: 36px!important;
+    }
+}
+
+
+/*=====  End of downoload  ======*/

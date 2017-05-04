@@ -1,0 +1,51 @@
+/*=============================
+=            popup            =
+=============================*/
+.popup {
+	display: none;
+	padding:50px;
+	border:2px solid $linkColor;
+	background:#fff;
+	text-align:center;
+
+	@media screen and (max-width:767px) {
+		width:95%;
+		padding:25px;
+
+	}
+}
+
+.popup__title {
+	@include font-size(24px,34px);
+	margin-bottom:10px;
+}
+
+.popup__text {
+	@include font-size(17px,27px);
+	margin-bottom:20px;
+}
+
+.fancybox-close-small {
+	outline:none!important;
+
+}
+.fancybox-close-small::after {
+	content:"";
+	width: 13px;
+	height: 13px;
+	background:url('../assets/img/icons/close-popup.png') no-repeat 0 0;
+	top:18px;
+	left:16px;
+	border-radius:0;
+	outline:none!important;
+
+}
+
+.fancybox-close-small:hover::after {
+	color: #888;
+	background:url('../assets/img/icons/close-popup.png') no-repeat 0 0;
+	outline:none;
+}
+
+
+/*=====  End of popup  ======*/

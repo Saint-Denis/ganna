@@ -1,0 +1,90 @@
+/*============================
+=            tabs            =
+============================*/
+.tabs {
+    margin-bottom:20px;
+}
+
+ul.tabs__controls li::before{
+    display: none;
+}
+
+ul.tabs__controls a.tabs__controls-link::after {
+    display: none;
+}
+
+ul.tabs__controls {
+    @include inline-block(middle);
+    border-bottom: 2px solid $linkColor;
+    padding-left: 0px;
+    font-size: 0;
+
+    @media screen and (max-width:767px) {
+    	border:none;
+    }
+}
+
+ul.tabs__list {
+	padding:35px 10px;
+}
+
+ul.tabs__controls .tabs__controls-item {
+    position: relative;
+    font-size: 0;
+    @include inline-block(middle);
+    margin-bottom: 0;
+
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 13px;
+        background: $bodybg;
+        transition: all 0.3s ease-in;
+    }
+    &:nth-of-type(1) {
+        &::after {
+            display: none;
+        }
+    }
+    &.active {
+        @include transition(background);
+        .tabs__controls-link {
+            background: #fdeabe;
+            @include transition(background);
+        }
+    }
+
+    @media screen and (max-width:767px) {
+    	display: block;
+    }
+}
+
+ul.tabs__list .tabs__item {
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}
+
+ul.tabs__controls .tabs__controls-link {
+    @include inline-block(middle);
+    @include font-size(17px, 24px);
+    padding: 7px 20px 11px 20px;
+    @include transition(background);
+    &:hover {
+        background: #fdeabe;
+    }
+
+    @media screen and (max-width:992px) {
+		padding: 7px 10px 11px 10px;
+    }
+}
+
+
+/*=====  End of tabs  ======*/

@@ -1,0 +1,397 @@
+/*================================
+=            workarea            =
+================================*/
+
+.workarea {
+    h1 {
+        @include cormac(extralight);
+        @include font-size(50px, 60px);
+        margin: 0;
+        margin-bottom: 45px;
+        @media screen and (max-width: 768px) {
+            @include font-size(48px, 58px);
+        }
+        @media screen and (max-width:767px) {
+            @include font-size(40px, 42px);
+            margin-bottom: 25px;
+        }
+        span {
+            color: #b0b0b0;
+        }
+    }
+    h2 {
+        @include cormac(extralight);
+        @include font-size(44px, 54px);
+        margin: 0;
+        margin-bottom: 15px;
+        @media screen and (max-width: 768px) {
+            @include font-size(40px, 50px);
+        }
+        @media screen and (max-width:767px) {
+            @include font-size(36px, 38px);
+            margin-bottom: 15px;
+        }
+        span {
+            color: #b0b0b0;
+        }
+    }
+    h3 {
+        @include cormac(extralight);
+        @include font-size(32px, 42px);
+        margin: 0;
+        margin-bottom: 15px;
+        @media screen and (max-width: 767px) {
+            @include font-size(30px, 34px);
+            margin-bottom: 15px;
+        }
+        span {
+            color: #b0b0b0;
+        }
+    }
+    h4 {
+        @include cormac(extralight);
+        @include font-size(24px, 34px);
+        margin: 0;
+        margin-bottom: 15px;
+        @media screen and (max-width: 767px) {
+            @include font-size(24px, 24px);
+        }
+        span {
+            color: #b0b0b0;
+        }
+    }
+    h5 {
+        @include font-size(20px, 30px);
+        font-weight: 400;
+        margin: 0;
+        margin-bottom: 15px;
+        @media screen and (max-width: 767px) {
+            @include font-size(20px, 24px);
+        }
+        span {
+            color: #b0b0b0;
+        }
+    }
+    p {
+        margin: 0;
+        margin-bottom: 15px;
+    }
+    small {
+        @include font-size(15px, 25px);
+        span {
+            color: #b0b0b0;
+        }
+    }
+    a {
+        @include inline-block(top);
+        position: relative;
+        color: #000;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            left: 0;
+            bottom: -1px;
+            z-index: 1;
+            transition: bottom 0.2s ease-in-out;
+            background: $linkColor;
+        }
+        &:hover {
+            &::after {
+                bottom: 2px;
+                transition: bottom 0.2s ease-in-out;
+            }
+        }
+    }
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+        height: auto;
+    }
+    iframe {
+        width: 100%;
+        min-height: 400px;
+        margin-bottom: 20px;
+    }
+    video {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    figure {
+        margin: 0;
+    }
+    figcaption {
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
+    ol {
+        list-style-type: none;
+        margin-bottom: 50px;
+        padding-left: 25px;
+    }
+    ol li {
+        position: relative;
+        counter-increment: step-counter;
+        margin-bottom: 20px;
+        @media screen and (max-width: 767px) {
+            @include font-size(17px, 23px);
+        }
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+    ol li::before {
+        content: counter(step-counter) ".";
+        position: absolute;
+        left: -20px;
+        @include cormac(extralight);
+        @include font-size(20px, 27px);
+        color: $linkColor;
+        @media screen and (max-width: 767px) {
+            @include font-size(17px, 23px);
+        }
+    }
+    ul {
+        padding-left: 50px;
+        margin-bottom: 25px;
+    }
+    ul li {
+        position: relative;
+        margin-bottom: 10px;
+        @media screen and (max-width: 767px) {
+            @include font-size(17px, 23px);
+        }
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+    ul li::before {
+        content: "";
+        position: absolute;
+        top: 11px;
+        left: -20px;
+        width: 6px;
+        height: 6px;
+        background: $linkColor;
+        border-radius: 50%;
+    }
+    mark {
+        display: block;
+        position: relative;
+        padding-left: 27px;
+        @include font-size(24px, 30px);
+        margin-bottom: 55px;
+        font-style: normal;
+        background: transparent;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 6px;
+            left: 0;
+            height: 83%;
+            width: 2px;
+            background: $linkColor;
+            @media screen and (max-width: 767px) {
+                height: 95%;
+            }
+        }
+    }
+    blockquote {
+        position: relative;
+        margin: 0;
+        margin-bottom: 60px;
+        padding-left: 175px;
+        @media screen and (max-width: 767px) {
+            padding-left: 55px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 106px;
+            height: 91px;
+            top: 0;
+            left: 0;
+            background: url("../assets/img/icons/block-icon.png") no-repeat 0 8px;
+            @media screen and (max-width: 767px) {
+                background-size: 35%
+            }
+        }
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        @include font-size(17px,
+        24px);
+        font-weight: 400;
+        margin-bottom: 30px;
+        @media screen and (max-width: 767px) {
+            width: 527px;
+            max-width: 527px;
+            overflow-x: scroll;
+        }
+        th {
+            @include font-size(15px,
+            24px);
+            font-weight: 400;
+            color: $tableBorder;
+            padding: 9px 0px;
+        }
+        tr {
+            @include transition(background);
+            &:first-child {
+                border-bottom: 1px solid $tableBorder;
+                &:hover {
+                    background: transparent;
+                }
+            }
+            &:hover {
+                background: #fdeabe;
+            }
+            td:first-child {
+                padding-left: 0px;
+                text-align: left;
+                @media screen and (max-width: 1110px) {
+                    padding-left: 10px;
+                }
+                @media screen and (max-width: 767px) {
+                    width: 75px;
+                }
+            }
+        }
+        th {
+            padding: 10px 10px 13px;
+        }
+        td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+            max-width: 180px;
+            @media screen and (max-width: 767px) {
+                width: 70px;
+            }
+        }
+    }
+    ::-webkit-input-placeholder {
+        color: $grey;
+    }
+    ::-moz-placeholder {
+        color: $grey;
+    }
+    :-ms-input-placeholder {
+        color: $grey;
+    }
+    :-moz-placeholder {
+        color: $grey;
+    }
+    ::-webkit-textarea-placeholder {
+        color: $grey;
+    }
+    :-ms-textarea-placeholder {
+        color: $grey;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input {
+        width: 100%;
+        border: 1px solid $inputBorder;
+        padding: 11px 15px;
+        margin-bottom: 20px;
+        color: #000;
+        @include transition(border);
+        &:focus {
+            border: 1px solid #ffd324;
+            @include transition(border);
+        }
+    }
+    input[type='radio'],
+    input[type='checkbox'] {
+        display: none;
+    }
+    input[type='radio'] + label {
+        position: relative;
+        padding-left: 28px;
+        cursor: pointer;
+        margin-right: 38px;
+        margin-bottom: 15px;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0px;
+            margin-top: -7px;
+            width: 16px;
+            height: 16px;
+            border: 1px solid #bbb;
+            border-radius: 50%;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    input[type='checkbox'] + label {
+        position: relative;
+        padding-left: 28px;
+        cursor: pointer;
+        margin-right: 38px;
+        margin-bottom: 15px;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0px;
+            margin-top: -7px;
+            width: 16px;
+            height: 16px;
+            border: 1px solid #bbb;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    input[type='radio']:checked + label::after {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        top: 9px;
+        left: 4px;
+        border-radius: 50%;
+        background: $linkColor;
+    }
+    input[type='checkbox']:checked + label::after {
+        content: '';
+        position: absolute;
+        width: 11px;
+        height: 8px;
+        top: 9px;
+        left: 4px;
+        border-radius: 50%;
+        background: url('../assets/img/icons/checked-icon.png') no-repeat 0 0;
+    }
+    input[type='checkbox'] + label,
+    input[type='radio'] + label {
+        @include inline-block(middle);
+    }
+    textarea {
+        @include font-size(17px,
+        27px);
+        color: #000;
+        border: 1px solid $inputBorder;
+        width: 100%;
+        height: 90px;
+        padding: 11px 15px;
+        margin-bottom: 20px;
+        @include transition(border);
+        &:focus {
+            border: 1px solid #ffd324;
+            @include transition(border);
+        }
+    }
+}
+
+
+/*=====  End of workarea  ======*/

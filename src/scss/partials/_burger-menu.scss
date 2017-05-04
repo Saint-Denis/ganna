@@ -1,0 +1,88 @@
+/*===================================
+=            burger-menu            =
+===================================*/
+
+.burger-menu {
+    position: absolute;
+    top: 83px;
+    right: 25px;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    margin-bottom: 25px;
+    z-index: 50;
+    will-change: transform;
+    transition:top 0.45s ease-in-out;
+    &.open {
+        @media screen and (max-width: 767px) {
+            transition:top 0.4s ease-in;
+            top: 25px;
+        }
+        &::before {
+            transform: scale(100);
+            @media screen and (max-width: 767px) {
+                transform: scale(50);
+            }
+        }
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: -15px;
+        right: -11px;
+        z-index: -1;
+        width: 50px;
+        height: 50px;
+        background: white;
+        border-radius: 50%;
+        cursor: pointer;
+        transform-origin: center 60%;
+        transform: scale(1);
+        transition: all 1.7s ease;
+    }
+    @media screen and (min-width:851px) {
+        display: none;
+    }
+    @media screen and (max-width:1110px) {
+        @include inline-block(middle);
+    }
+    @media screen and (max-width:767px) {
+        top: 125px;
+    }
+}
+
+.burger-menu span {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    background: #000;
+    width: 100%;
+    height: 2px;
+    margin-bottom: 7px;
+    transform: rotate(0deg);
+    opacity: 1;
+    transition: all 0.35s ease-in;
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+
+.burger-menu.open span:nth-child(1) {
+    transform: rotate(135deg);
+    top: 9px;
+}
+
+.burger-menu.open span:nth-child(2) {
+    opacity: 0;
+    width: 0;
+    left: -60px;
+}
+
+.burger-menu.open span:nth-child(3) {
+    transform: rotate(-135deg);
+    top: -9px;
+}
+
+
+/*=====  End of burger-menu  ======*/

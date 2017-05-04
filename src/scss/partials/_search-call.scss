@@ -1,0 +1,26 @@
+/*===================================
+=            search-call            =
+===================================*/
+.search-call {
+	display:none;
+
+	@media screen and (max-width:1110px) {
+		width: 170px;
+		height: 23px;
+		@include inline-block(middle);
+		position: relative;
+		top: 6px;
+	}
+
+	@media screen and (max-width:767px) {
+		width:30px;
+		height: 33px;
+		padding-top:10px;
+		float: left;
+		top: 0px;
+	}
+
+}
+
+
+/*=====  End of search-call  ======*/

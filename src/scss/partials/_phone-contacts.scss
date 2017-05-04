@@ -1,0 +1,44 @@
+/*======================================
+=            phone-contacts            =
+======================================*/
+
+.phone-contacts {
+    font-size: 0;
+    margin-right: 55px;
+    @media screen and (max-width: 1300px) {
+        margin-right: 0px;
+    }
+    @media screen and (max-width:1110px) {
+        max-width: 100%;
+    }
+    @media screen and (max-width:767px) {
+        @include inline-block(middle);
+        padding-top:6px;
+        float: right;
+        width: 50%;
+        text-align: right;
+        margin-right: 0px;
+       
+    }
+    @media screen and (max-width:480px) {
+        width: auto;
+    }
+}
+
+.phone-contacts__number {
+    @include font-size(20px, 30px);
+    @include inline-block(middle);
+    text-transform: uppercase;
+    @media screen and (max-width: 1300px) {
+        margin-right: 0px;
+    }
+    @media screen and (max-width:1110px) {
+        @include font-size(20px, 1);
+    }
+    @media screen and (max-width:767px) {
+        @include font-size(18px);
+    }
+}
+
+
+/*=====  End of phone-contacts  ======*/

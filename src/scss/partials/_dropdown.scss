@@ -1,0 +1,392 @@
+/*================================
+=            dropdown            =
+================================*/
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    min-width: 150px;
+    transform: translateY(-15px);
+    opacity: 0;
+    visibility: hidden;
+    background: #fff;
+    padding: 10px 13px;
+    padding-bottom: 20px;
+    border: 2px solid $yellowborder;
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+    z-index: 50;
+    white-space: nowrap;
+    &.active {
+        transform: translateY(0px);
+        opacity: 1;
+        visibility: visible;
+        transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+    }
+    @media screen and (max-width:1200px) {
+        width: 220px;
+    }
+    @media screen and (max-width:1110px) {
+        display: none;
+        position: relative;
+        background: $bodybg;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0px);
+        width: auto;
+        min-width: auto;
+        border: none;
+        padding: 10px 20px;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: -95%;
+            bottom: 0;
+            background: $bodybg;
+            transition: all 0.3s ease-in;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: -95%;
+            bottom: 0;
+            background: $bodybg;
+            transition: all 0.3s ease-in;
+        }
+    }
+    &--full {
+        // opacity: 1;
+        // visibility: visible;
+        // transform: translateY(0px);
+        display: flex;
+        white-space: normal;
+        width: 100%;
+        padding: 20px 0px 25px 30px;
+        @media screen and (max-width: 1110px) {
+            position: relative;
+            top: 2px;
+            left: 0px;
+            display: none;
+            width: auto;
+            min-width: auto;
+            padding: 5px 10px 0px 20px;
+            background: #fff;
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+        @media screen and (max-width: 767px) {
+            padding: 10px 0px 10px 20px;
+        }
+    }
+}
+
+.dropdown__list {
+    @media screen and (max-width: 1110px) {
+        display: block;
+        padding-bottom: 10px;
+        &:nth-child(2) .dropdown__item:last-child {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.dropdown--full .dropdown__list {
+    @include inline-block(middle);
+    color: #000;
+    @media screen and (max-width: 1110px) {
+        margin-right: 0px;
+        display: block;
+        max-width: 100%;
+    }
+}
+
+.dropdown--full .dropdown__column:nth-of-type(1) .dropdown__list:nth-of-type(1) {
+    max-width: 150px;
+    margin-right: 75px;
+    @media screen and (max-width: 1110px) {
+        max-width: 100%;
+        margin-right: 0px;
+    }
+}
+
+.dropdown--full .dropdown__column:nth-of-type(2) .dropdown__list:nth-of-type(1) {
+    max-width: 175px;
+    margin-right: 65px;
+    @media screen and (max-width: 1110px) {
+        max-width: 100%;
+        margin-right: 0px;
+    }
+}
+
+.dropdown--full .dropdown__column:nth-of-type(2) .dropdown__list:nth-of-type(2) {
+    max-width: 160px;
+    margin-right: 0px;
+    @media screen and (max-width: 1110px) {
+        max-width: 100%;
+        margin-right: 0px;
+    }
+}
+
+.dropdown__item {
+    margin-bottom: 10px;
+    &:last-child {
+        margin-bottom: 0px;
+    }
+    @media screen and (max-width: 1110px) {
+        margin-bottom: 15px;
+    }
+}
+
+.dropdown__link {
+    position: relative;
+    @include font-size(17px, 24px);
+    display: inline;
+    color: #000;
+    border-bottom: 1px solid transparent;
+    @include transition(border-bottom);
+     cursor:pointer;
+    &:hover {
+        border-bottom: 1px solid $linkColor;
+        @include transition(border-bottom);
+        @media screen and (max-width: 1110px) {
+            border-bottom: 1px solid transparent;
+            text-decoration: none;
+        }
+    }
+    @media screen and (max-width: 1110px) {
+        padding: 0px;
+        display: block;
+        width: 100%;
+        word-break: normal;
+    }
+    &--list {
+        position: relative;
+        &::after {
+            content: "";
+            position: relative;
+            left: 0px;
+            @include inline-block(middle);
+            width: 6px;
+            height: 4px;
+            transform: rotate(0);
+            transition: transform 0.3s ease-in;
+            background: url("../assets/img/icons/arrow-down.png") no-repeat 0 0;
+            @media screen and (min-width: 1111px) {
+                display: none;
+            }
+            @media screen and (max-width:1110px) {
+                display: inline-block;
+            }
+        }
+        &.active {
+            &::after {
+                transform: rotate(180deg);
+                transition: transform 0.3s ease-in;
+            }
+        }
+    }
+}
+
+.dropdown--full .dropdown__link {
+    cursor:pointer;
+    @media screen and (max-width: 1110px) {
+        max-width: 100%;
+    }
+    @media screen and (max-width: 480px) {
+        max-width: 150px;
+    }
+}
+
+.dropdown--full .dropdown__column {
+    width: 50%;
+    @media screen and (max-width: 1110px) {
+        width: 100%;
+        &.active {
+            position: relative;
+            background: $bodybg;
+            .dropdown__title-link::after {
+                transform: rotate(180deg);
+                transition: transform 0.3s ease-in;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: -100%;
+                bottom: 0;
+                background: $bodybg;
+                z-index: 25;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                right: -100%;
+                bottom: 0;
+                background: $bodybg;
+                z-index: 25;
+            }
+        }
+    }
+}
+
+.dropdown--full .dropdown__column-inner {
+    display: flex;
+    align-items: flex-start;
+    padding-left: 45px;
+    @media screen and (max-width: 1110px) {
+        display: none;
+        padding-left: 20px;
+    }
+}
+
+.dropdown--full .dropdown__title {
+    @include inline-block(middle);
+    position: relative;
+    @include font-size(24px);
+    @include cormac(extralight);
+    margin-bottom: 20px;
+    padding-left: 45px;
+    @media screen and (max-width: 1110px) {
+        padding-left: 0px;
+        @include font-size(20px,
+        27px);
+        margin-bottom: 10px;
+    }
+    @media screen and (max-width:767px) {
+        @include font-size(18px);
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 38px;
+        height: 32px;
+        background: url('../assets/img/svg/chick-leg-icon.svg') no-repeat 0 0;
+        @media screen and (max-width: 1110px) {
+            display: none;
+        }
+    }
+    &--cheese {
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            width: 43px;
+            height: 27px;
+            background: url('../assets/img/svg/chick-full-icon.svg') no-repeat 0 0;
+            @media screen and (max-width: 1110px) {
+                display: none;
+            }
+        }
+    }
+}
+
+.dropdown--full .dropdown__title-link {
+    color: #000;
+    @include transition(width);
+    @include inline-block(middle);
+    border-bottom: 1px solid transparent;
+    @include transition(border-bottom);
+    &:hover {
+        border-bottom: 1px solid $linkColor;
+        @include transition(border-bottom);
+        @media screen and (max-width: 1110px) {
+            border-bottom: 1px solid transparent;
+            text-decoration: none;
+        }
+    }
+    &::after {
+        content: "";
+        position: relative;
+        left: 0px;
+        @include inline-block(middle);
+        width: 6px;
+        height: 4px;
+        transform: rotate(0);
+        transition: transform 0.3s ease-in;
+        background: url("../assets/img/icons/arrow-down.png") no-repeat 0 0;
+        @media screen and (min-width: 1110px) {
+            display: none;
+        }
+        @media screen and (max-width:1110px) {
+            display: inline-block;
+            top: -2px;
+        }
+    }
+}
+
+.dropdown--full .dropdown__sub {
+    padding-left: 24px;
+    @media screen and (max-width: 1110px) {
+        display: none;
+        padding-top: 10px;
+        padding-bottom: 0px;
+        &.active {
+            display: block;
+        }
+    }
+}
+
+.dropdown--full .dropdown__sub-item {
+    position: relative;
+    padding-left: 15px;
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: 0;
+        width: 6px;
+        height: 6px;
+        background: $yellow;
+        border-radius: 50%;
+    }
+
+    @media screen and (max-width: 1110px) {
+        margin-bottom: 7px;
+    }
+}
+
+.dropdown--full .dropdown__sub-link {
+    position: relative;
+    display: inline;
+    color: #000;
+    @include font-size(15px,
+    19px);
+    border-bottom: 1px solid transparent;
+    @include transition(border-bottom);
+    &:hover {
+        border-bottom: 1px solid $linkColor;
+        @include transition(border-bottom);
+        @media screen and (max-width: 1110px) {
+            border-bottom: 1px solid transparent;
+            text-decoration: none;
+        }
+    }
+    @media screen and (max-width: 1110px) {
+        @include inline-block(middle);
+    }
+}
+
+
+/*=====  End of dropdown  ======*/

@@ -1,0 +1,33 @@
+/*=====================================
+=            download-link            =
+=====================================*/
+
+a.download-link {
+	position: relative;
+	margin-left:90px;
+	@include font-size(17px,24px);
+	border-bottom:1px dashed #faba1f;
+	@include transition(border-bottom);
+
+	&::after {
+		display: none;
+	}
+
+	&:hover {
+		border-bottom:1px dashed transparent;
+	}
+
+	&::before {
+		content:'';
+		position: absolute;
+		top:50%;
+		left: -95px;
+		transform:translateY(-50%);
+		width: 96px;
+		height:36px;
+		background:url('../assets/img/icons/docs-icon.png') no-repeat 0 0;
+
+	}
+}
+
+/*=====  End of download-link  ======*/

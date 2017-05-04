@@ -1,0 +1,30 @@
+/*==================================
+=            order-form            =
+==================================*/
+
+.page-form {
+    background: #fff;
+    padding: 35px 40px!important;
+    padding-bottom: 40px;
+    padding-right: 37px!important;
+
+    h3 {
+        text-align: center;
+        margin-bottom: 27px;
+    }
+
+    .error {
+       input,textarea {
+         border:2px solid $red;
+       }
+    }
+
+    @media screen and (max-width:767px) {
+        width: 100%;
+    }
+}
+
+
+
+
+/*=====  End of order-form  ======*/

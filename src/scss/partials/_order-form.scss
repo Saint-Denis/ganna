@@ -1,0 +1,31 @@
+/*==================================
+=            order-form            =
+==================================*/
+.order-form {
+	width: 475px;
+	background:#fff;
+	padding:35px 40px;
+	padding-bottom:40px;
+	padding-right:37px;
+
+	@media screen and (max-width:767px) {
+		width: 100%;
+	}
+}
+
+.order-form__title {
+	@include font-size(36px,46px);
+	text-align:center;
+	margin-bottom:27px;
+}
+
+.order-form__input {
+	margin-bottom:18px;
+}
+
+.order-form__area {
+	margin-bottom:18px;
+}
+
+
+/*=====  End of order-form  ======*/

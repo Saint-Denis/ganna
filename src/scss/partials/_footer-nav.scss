@@ -1,0 +1,96 @@
+/*==================================
+=            footer-nav            =
+==================================*/
+
+.footer-nav {
+    max-width: 810px;
+    border-bottom: 1px solid $linkColor;
+    width: 100%;
+    @media screen and (max-width: 1150px) {
+        border-bottom: none;
+        max-width: 450px;
+    }
+    @media screen and (max-width: 850px) {
+        max-width: 400px;
+    }
+    @media screen and (max-width: 767px) {
+        max-width: 320px;
+    }
+    @media screen and (max-width: 580px) {
+        max-width: 100%;
+    }
+}
+
+.footer-nav__row {
+    display: flex;
+    padding-bottom: 24px;
+    &:nth-of-type(2) .footer-nav__item:last-child {
+        margin-right: 0px;
+    }
+    @media screen and (max-width:1150px) {
+        display: block;
+        margin-right: 40px;
+        padding-bottom: 0px;
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+    @media screen and (max-width: 580px) {
+        display: block;
+        margin-right: 0px;
+        &:nth-of-type(1) .footer-nav__item:last-child {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.footer-nav__item {
+    font-size: 0px;
+    margin-right: 18px;
+    @media screen and (max-width: 1110px) {
+        margin-right: 12px;
+    }
+    @media screen and (max-width:580px) {
+        margin-bottom: 15px;
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.footer-nav__link {
+    position: relative;
+    color: #000;
+    padding-top: 15px;
+    @include font-size(17px, 24px);
+    @include inline-block(middle);
+    border-bottom:1px solid transparent;
+    @include transition(border-bottom);
+
+    &:hover {
+        border-bottom:1px solid $linkColor;
+        @include transition(border-bottom);
+        @media screen and (max-width: 1110px) {
+              border-bottom:1px solid transparent;
+              text-decoration:none;
+        }
+    }
+    @media screen and (max-width:1150px) {
+        @include font-size(17px, 36px);
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+    @media screen and (max-width:580px) {
+        @include font-size(17px, 24px);
+    }
+}
+
+.footer-nav__list {
+    display: flex;
+    @media screen and (max-width: 580px) {
+        display: block;
+    }
+}
+
+
+/*=====  End of footer-nav  ======*/

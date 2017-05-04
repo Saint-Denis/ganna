@@ -1,0 +1,83 @@
+/*=================================
+=            form-wrap            =
+=================================*/
+
+.page-input {
+    input[type='radio'],
+    input[type='checkbox'] {
+        display: none;
+    }
+    input[type='radio'] + label {
+        position: relative;
+        padding-left: 28px;
+        cursor: pointer;
+        margin-right: 38px;
+        margin-bottom:15px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0px;
+            margin-top: -7px;
+            width: 16px;
+            height: 16px;
+            border: 1px solid #bbb;
+            border-radius: 50%;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    input[type='checkbox'] + label {
+        position: relative;
+        padding-left: 28px;
+        cursor: pointer;
+        margin-right: 38px;
+        margin-bottom:15px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0px;
+            margin-top: -7px;
+            width: 16px;
+            height: 16px;
+            border: 1px solid #bbb;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    input[type='radio']:checked + label::after {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        top: 9px;
+		left: 4px;
+        border-radius: 50%;
+        background: $linkColor;
+    }
+
+    input[type='checkbox']:checked + label::after {
+        content: '';
+        position: absolute;
+        width: 11px;
+        height: 8px;
+        top: 9px;
+		left: 4px;
+        border-radius: 50%;
+        background: url('../assets/img/icons/checked-icon.png') no-repeat 0 0;
+    }
+
+    label {
+        @include inline-block(middle);
+    }
+}
+
+
+/*=====  End of form-wrap  ======*/
