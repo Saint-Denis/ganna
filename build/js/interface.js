@@ -89,15 +89,15 @@ $(document).ready(function() {
 
         $menu.on('click', function(e) {
 
-            $(this).stop(true,true).delay(100).toggleClass('open');
+            $(this).stop(true,true).delay(200).toggleClass('open');
+            $mobileWrapper.stop(true,true).delay(200).toggleClass('open');
 
             setTimeout(function() {
                 for (var i = 0; i < $mobileItem.length; i++) {
                     $mobileItem[i].classList.toggle('show');
                 };
 
-                $mobileWrapper.stop(true,true).toggleClass('open');
-            }, 250)
+            }, 450)
 
             $mobileNav.stop(true,true).toggleClass('open');
             $breadcrumbs.add($pageContent).toggleClass('z-index');
@@ -114,7 +114,7 @@ $(document).ready(function() {
                 items = list.find('.mobile-nav__item'),
                 content = item.find('.mobile-inner'),
                 otherContent = list.find('.mobile-inner'),
-                duration = 300;
+                duration = 800;
 
             if (!item.hasClass('active')) {
                 items.removeClass('active');
@@ -138,7 +138,7 @@ $(document).ready(function() {
                 items = list.find('.mobile-inner__level2-item'),
                 content = item.find('.mobile-inner__list'),
                 otherContent = list.find('.mobile-inner__list'),
-                duration = 300;
+                duration = 800;
 
             if (!item.hasClass('active')) {
                 items.removeClass('active');
@@ -159,7 +159,7 @@ $(document).ready(function() {
             var $this = $(this),
                 item = $this.closest('.mobile-inner__item'),
                 $menuLevel3 = $('.mobile-inner__sub'),
-                duration = 300;
+                duration = 800;
 
             if (!item.hasClass('active')) {
                 item.addClass('active');

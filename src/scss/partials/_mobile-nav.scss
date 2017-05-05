@@ -4,9 +4,10 @@
 
 .mobile-wrapper {
     display: none;
+    z-index: 50;
+    position: absolute;
     @media screen and (max-width: 1110px) {
         display: block;
-        position: absolute;
         top: 0px;
         right: 0px;
         height: 100%;   
@@ -15,13 +16,12 @@
         min-width: 100vw;
         z-index: 1;
         overflow: hidden;
+        pointer-events:none;
         &.open {
+     
             z-index: 50;
             top: 0;
             right: 0;
-            @media screen and (max-width: 767px) {
-                overflow: visible;     
-            }
         }
     }
 }
@@ -30,6 +30,7 @@
     display: none;
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events:auto;
     @media screen and (max-width: 1110px) {
         &.open {
             display: inline-block;
@@ -40,8 +41,8 @@
             transform: translate(-50%, -50%);
             z-index: 51;
             transition: opacity 0.4s ease-in-out;
-            text-align: center;
             max-height: 100vh;
+            max-width: 312px;
         }
     }
     @media screen and (max-width: 500px) {
@@ -68,7 +69,7 @@
     transform:translateY(100px);
     &.show {
         transform:translateY(0);
-        transition: all 0.5s ease;
+        transition: all 1.3s ease;
         opacity: 1;
     }
     &.active .mobile-nav__link::after {
@@ -119,8 +120,8 @@
     position: relative;
     @include inline-block(middle);
     @include font-size(44px, 48px);
-    color: $linkColor;
-    padding: 5px 0px;
+    color: #000;
+    padding: 15px 0px;
     padding-right: 10px;
     &::after {
         content: "";

@@ -13,6 +13,7 @@
     z-index: 50;
     will-change: transform;
     transition:top 0.45s ease-in-out;
+    pointer-events:auto;
     &.open {
         @media screen and (max-width: 767px) {
             transition:top 0.4s ease-in;
@@ -38,7 +39,7 @@
         cursor: pointer;
         transform-origin: center 60%;
         transform: scale(1);
-        transition: all 1.7s ease;
+        transition: all 1.3s ease;
     }
     @media screen and (min-width:851px) {
         display: none;
