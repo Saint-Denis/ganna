@@ -114,7 +114,7 @@ gulp.task("html", function() {
 });
 
 gulp.task("useref", function() {
-    return gulp.src('./build/index.html')
+    return gulp.src('./build/*.html')
         .pipe(useref())
         .pipe(gulp.dest('./build/'));
 });

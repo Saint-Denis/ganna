@@ -274,7 +274,7 @@ $(document).ready(function() {
     $(window).bind('load resize', function() {
         var $windowWith = $(window).width(),
             $menu = $('.page-nav').find('.page-nav__list'),
-            $items = $menu.find('.page-nav__item'),
+            $items = $menu.find('.page-nav__item').not('.page-nav__item--empty'),
             $headerWrapper = $('.page-header__wrapper').width(),
             $headerBottonWidth = $('.page-header__bottom').width(),
             $pageNavItemPos = $('.page-nav__item--js').position().left,
