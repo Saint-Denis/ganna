@@ -2,11 +2,15 @@
 =            social-link            =
 ===================================*/
 .social-link svg {
-	width: 40px;
+	width: 41px;
 	height:40px;
 	fill:#f0f0f0;
 	@include transition(fill);
 
+}
+
+.social-link .outline {
+	
 }
 
 

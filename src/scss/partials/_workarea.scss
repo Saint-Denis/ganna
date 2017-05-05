@@ -386,6 +386,7 @@
         padding: 11px 15px;
         margin-bottom: 20px;
         @include transition(border);
+        resize: vertical;
         &:focus {
             border: 1px solid #ffd324;
             @include transition(border);

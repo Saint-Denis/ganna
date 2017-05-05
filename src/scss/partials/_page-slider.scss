@@ -17,10 +17,11 @@
         position: absolute;
         top: 50%;
         left:0px;
-        transform: translateY(-50%);
-        width: 18px;
+        transform: translateY(-50%) rotate(180deg);
+         width: 24px;
         height: 30px;
-        background: url("../assets/img/icons/arrow-prev.png") no-repeat 0 0;
+        background: url("../assets/img/svg/arrow-right.svg") no-repeat 0 0;
+        background-size:cover;
         z-index: 50;
     }
     .slick-prev::after {
@@ -55,11 +56,12 @@
         content: "";
         position: absolute;
         top: 50%;
-        right:0px;
+        right:-1px;
         transform: translateY(-50%);
-        width: 18px;
+        width: 24px;
         height: 30px;
-        background: url("../assets/img/icons/arrow-next.png") no-repeat 0 0;
+        background: url("../assets/img/svg/arrow-right.svg") no-repeat 0 0;
+        background-size:cover;
         z-index: 50;
         
     }
