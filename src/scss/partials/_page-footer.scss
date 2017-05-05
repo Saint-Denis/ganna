@@ -93,13 +93,14 @@
     justify-content: space-between;
     width: 100%;
     align-items: center;
+
     @media screen and (max-width: 1150px) {
         align-items: flex-start;
         border-bottom: 1px solid $linkColor;
     }
 
-     @media screen and (max-width: 580px) {
-        padding-bottom:30px;
+     @media screen and (max-width: 700px) {
+        padding-bottom:25px;
         display: block;
     }
 }

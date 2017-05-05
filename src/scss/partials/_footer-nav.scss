@@ -3,55 +3,36 @@
 ==================================*/
 
 .footer-nav {
-    max-width: 810px;
+    max-width: 850px;
     border-bottom: 1px solid $linkColor;
-    width: 100%;
+    padding-bottom: 25px;
     @media screen and (max-width: 1150px) {
         border-bottom: none;
-        max-width: 450px;
+        width: 70%;
     }
-    @media screen and (max-width: 850px) {
-        max-width: 400px;
+    @media screen and (max-width: 992px) {
+        width: 400px;
     }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 700px) {
         max-width: 320px;
-    }
-    @media screen and (max-width: 580px) {
+        width: 100%;
         max-width: 100%;
-    }
-}
-
-.footer-nav__row {
-    display: flex;
-    padding-bottom: 24px;
-    &:nth-of-type(2) .footer-nav__item:last-child {
-        margin-right: 0px;
-    }
-    @media screen and (max-width:1150px) {
-        display: block;
-        margin-right: 40px;
-        padding-bottom: 0px;
-        &:last-child {
-            margin-right: 0px;
-        }
-    }
-    @media screen and (max-width: 580px) {
-        display: block;
-        margin-right: 0px;
-        &:nth-of-type(1) .footer-nav__item:last-child {
-            margin-bottom: 15px;
-        }
+        padding-bottom: 15px;
     }
 }
 
 .footer-nav__item {
     font-size: 0px;
     margin-right: 18px;
-    @media screen and (max-width: 1110px) {
-        margin-right: 12px;
+    @media screen and (max-width: 1150px) {
+        width: 25%;
     }
-    @media screen and (max-width:580px) {
-        margin-bottom: 15px;
+    @media screen and (max-width: 992px) {
+        width: 35%;
+    }
+    @media screen and (max-width:700px) {
+        width: 100%;
+        margin-bottom: 10px;
         &:last-child {
             margin-bottom: 0px;
         }
@@ -64,30 +45,30 @@
     padding-top: 15px;
     @include font-size(17px, 24px);
     @include inline-block(middle);
-    border-bottom:1px solid transparent;
+    border-bottom: 1px solid transparent;
     @include transition(border-bottom);
-
+    white-space: nowrap;
     &:hover {
-        border-bottom:1px solid $linkColor;
+        border-bottom: 1px solid $linkColor;
         @include transition(border-bottom);
         @media screen and (max-width: 1110px) {
-              border-bottom:1px solid transparent;
-              text-decoration:none;
+            border-bottom: 1px solid transparent;
+            text-decoration: none;
         }
     }
     @media screen and (max-width:1150px) {
-        @include font-size(17px, 36px);
         padding-top: 3px;
         padding-bottom: 3px;
     }
-    @media screen and (max-width:580px) {
-        @include font-size(17px, 24px);
+    @media screen and (max-width:700px) {
+        white-space: normal;
     }
 }
 
 .footer-nav__list {
     display: flex;
-    @media screen and (max-width: 580px) {
+    flex-wrap: wrap;
+    @media screen and (max-width: 700px) {
         display: block;
     }
 }
