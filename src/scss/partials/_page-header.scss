@@ -197,6 +197,7 @@
         @include font-size(18px,
         40px);
         background: url("../assets/img/svg/xls.svg") no-repeat 0 5px;
+        z-index:-1;
     }
 
     @media screen and (max-width: 767px) {

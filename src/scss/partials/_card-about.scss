@@ -41,7 +41,7 @@
         height: 1px;
         width: 100%;
         background: url('../assets/img/another/dots.png') repeat-x 0 0;
-        z-index: -1;
+        z-index: 1;
         @media screen and (max-width: 480px) {
             display: none;
         }

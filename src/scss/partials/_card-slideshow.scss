@@ -3,8 +3,16 @@
 ======================================*/
 
 .card-slideshow {
-	@media screen and (max-width: 992px) {
+    @media screen and (max-width: 992px) {
         margin-bottom: 30px;
+    }
+}
+
+.card-slideshow__wrapper {
+    position: relative;
+    @include inline-block(middle);
+    @media screen and (max-width: 992px) {
+        display: block;
     }
     @media screen and (max-width: 480px) {
         display: flex;

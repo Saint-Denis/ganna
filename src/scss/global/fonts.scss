@@ -3,14 +3,14 @@
 @font-face {
     font-family: "cormac-black";
     src: url('../assets/fonts/cormac-black.woff2') format('woff2'), url('../assets/fonts/cormac-black.woff') format('woff');
-    font-style: normal;
+
     font-display:swap;
 }
 
 @font-face {
     font-family: "cormac-extralight";
-    src: url('../assets/fonts/cormac-extralight.woff2') format('woff2'), url('../assets/fonts/cormac-extralight.woff') format('woff');
-    font-style: normal;
+    src: url('../assets/fonts/cormac-extra.woff') format('woff');
+    font-weight:800;
     font-display:swap;
 }
 

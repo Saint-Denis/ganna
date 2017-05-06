@@ -82,15 +82,18 @@ $(document).ready(function() {
             $menu = $('.burger-menu'),
             $mobileNav = $('.mobile-nav'),
             $mobileWrapper = $('.mobile-wrapper'),
-            $breadcrumbs =$('.breadcrumbs'),
+            $breadcrumbs = $('.breadcrumbs'),
             $pageContent = $('.page-content'),
             $mobileItem = $('.mobile-nav__list').find('.mobile-nav__item');
 
 
         $menu.on('click', function(e) {
 
-            $(this).stop(true,true).delay(200).toggleClass('open');
-            $mobileWrapper.stop(true,true).delay(200).toggleClass('open');
+            $(this).stop(true, true).delay(1000).toggleClass('open');
+
+            setTimeout(function() {
+                $mobileWrapper.stop(true, true).toggleClass('open');
+            }, 500);
 
             setTimeout(function() {
                 for (var i = 0; i < $mobileItem.length; i++) {
@@ -99,7 +102,7 @@ $(document).ready(function() {
 
             }, 450)
 
-            $mobileNav.stop(true,true).toggleClass('open');
+            $mobileNav.stop(true, true).toggleClass('open');
             $breadcrumbs.add($pageContent).toggleClass('z-index');
             e.stopImmediatePropagation();
 
@@ -114,17 +117,30 @@ $(document).ready(function() {
                 items = list.find('.mobile-nav__item'),
                 content = item.find('.mobile-inner'),
                 otherContent = list.find('.mobile-inner'),
-                duration = 800;
+                duration = 400;
 
             if (!item.hasClass('active')) {
                 items.removeClass('active');
+                items.find('.mobile-nav__link').removeClass('hovered');
+
                 item.addClass('active');
+                item.find('.mobile-nav__link').addClass('hovered').delay(100);
 
                 otherContent.stop(true, true).slideUp(duration);
                 content.stop(true, true).slideDown(duration);
+
+                //Mobile Scroll
+                // $('.mobile-scroll').mCustomScrollbar({
+                //     axis: "y",
+                //     theme: "dark"
+                // });
+
+
             } else {
                 content.stop(true, true).slideUp(duration);
                 item.stop(true, true).removeClass('active');
+                item.find('.mobile-nav__link').removeClass('hovered');
+
             };
         });
 
@@ -138,7 +154,7 @@ $(document).ready(function() {
                 items = list.find('.mobile-inner__level2-item'),
                 content = item.find('.mobile-inner__list'),
                 otherContent = list.find('.mobile-inner__list'),
-                duration = 800;
+                duration = 400;
 
             if (!item.hasClass('active')) {
                 items.removeClass('active');
@@ -158,16 +174,21 @@ $(document).ready(function() {
             e.preventDefault();
             var $this = $(this),
                 item = $this.closest('.mobile-inner__item'),
-                $menuLevel3 = $('.mobile-inner__sub'),
-                duration = 800;
+                list = $this.closest('.mobile-inner__list'),
+                items = list.find('.mobile-inner__item'),
+                content = item.find('.mobile-inner__sub'),
+                otherContent = list.find('.mobile-inner__sub'),
+                duration = 400;
+
 
             if (!item.hasClass('active')) {
+                items.removeClass('active');
                 item.addClass('active');
 
-                $menuLevel3.stop(true, true).slideDown(duration);
-
+                otherContent.stop(true, true).slideUp(duration);
+                content.stop(true, true).slideDown(duration);
             } else {
-                $menuLevel3.stop(true, true).slideUp(duration);
+                content.stop(true, true).slideUp(duration);
                 item.stop(true, true).removeClass('active');
             };
 
@@ -186,16 +207,16 @@ $(document).ready(function() {
     //Styling Scroll
     (function() {
 
+        if ($('.sod_list').length > 0) {
+            $('.sod_list').mCustomScrollbar({
+                axis: "y",
+                theme: "dark"
+            });
+        };
 
-        $('.sod_list').mCustomScrollbar({
-            axis: "y",
-            theme: "dark"
-        });
 
 
     }());
-
-
 
     //Photo gallery
     (function() {
