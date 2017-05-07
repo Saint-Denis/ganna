@@ -84,6 +84,7 @@ $(document).ready(function() {
             $mobileWrapper = $('.mobile-wrapper'),
             $breadcrumbs = $('.breadcrumbs'),
             $pageContent = $('.page-content'),
+            $layout = $('.layout'),
             $mobileItem = $('.mobile-nav__list').find('.mobile-nav__item');
 
 
@@ -91,10 +92,12 @@ $(document).ready(function() {
 
             $(this).stop(true, true).delay(1000).toggleClass('open');
 
+            //Задержка в появлении меню
             setTimeout(function() {
                 $mobileWrapper.stop(true, true).toggleClass('open');
-            }, 500);
+            }, 450);
 
+            //Анимация пунктов меню
             setTimeout(function() {
                 for (var i = 0; i < $mobileItem.length; i++) {
                     $mobileItem[i].classList.toggle('show');
@@ -102,7 +105,18 @@ $(document).ready(function() {
 
             }, 450)
 
+            //Убираем скролл сайта, оставляем скролл меню
+            setTimeout(function() {
+                if ($mobileNav.hasClass('open')) {
+                    $layout.addClass('hidden');
+                } else {
+                    $layout.removeClass('hidden');
+                };
+            }, 450);
+
             $mobileNav.stop(true, true).toggleClass('open');
+
+            //Меняем z-index у хлебных крошек и контента
             $breadcrumbs.add($pageContent).toggleClass('z-index');
             e.stopImmediatePropagation();
 
@@ -266,7 +280,43 @@ $(document).ready(function() {
 });
 
 
+//Preloader
+(function() {
+    $(window).on('load', function() {
+       
+            var $preloader = $('.preloader'),
+                $images = document.images,
+                $imagesCount = $images.length,
+                $percentWindow = $('.preloader__percent'),
+                $imagesLoadedCount = 0;
 
+
+            for( var i = 0; i < $imagesCount; i++) {
+                    var $imageClone = new Image;
+                        $imageClone.onload = imageLoad;
+                        $imageClone.onerror = imageLoad;
+                        $imageClone.src = $images[i].src;
+            };
+
+            function imageLoad() {
+                $imagesLoadedCount++;
+                $percentWindow.html( ( ((100/$imagesCount) * $imagesLoadedCount) << 0) + '%');
+
+                 if($imagesLoadedCount >=$imagesCount) {
+                    setTimeout(function() {
+                        if(!$preloader.hasClass('done')) {
+                            $preloader.addClass('done');
+                        };
+                    },2000);
+                 };
+            };
+
+
+    
+    });
+}());
+
+//Scroll on table
 (function() {
     $(window).bind('load resize', function() {
         var $windowWith = $(window).width(),

@@ -1,0 +1,79 @@
+/*=================================
+=            preloader            =
+=================================*/
+
+.preloader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    background: $linkColor;
+    transition: 1s all;
+    opacity: 1;
+    visibility: visible;
+    overflow: hidden;
+    text-align: center;
+    &.done {
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+    }
+}
+
+.preloader__pic {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 200px;
+    width: 150px;
+    border-radius: 100%;
+    background: linear-gradient(#e5e5e5 10%, #fff 60%);
+    cursor: pointer;
+    box-shadow: 1px 2px 2px #e5e5e5;
+    animation-name: eggSpin;
+    animation-duration: 7.0s;
+    animation-iteration-count: infinite;
+    animation-direction: forward;
+    animation-play-state: running;
+    animation-timing-function: cubic-bezier(.32, -0.67, .7, 1.52);
+}
+
+.preloader__percent {
+    @include cormac(extralight);
+    @include font-size(36px, 1);
+    color: $linkColor;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    transition: 4s all;
+}
+
+@keyframes eggSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/*=====  End of preloader  ======*/
