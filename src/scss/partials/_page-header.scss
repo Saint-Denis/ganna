@@ -8,8 +8,6 @@
     background: $white;
     padding-top: 13px;
     border-bottom: 2px solid $bodybg;
- 
-  
     @media screen and (max-width: 1300px) {
         padding-left: 15px;
         padding-right: 15px;
@@ -23,7 +21,7 @@
 
 .page-header__top {
     position: relative;
-    z-index:1;
+    z-index: 1;
     display: flex;
     align-items: center;
     border-bottom: 2px solid $greyborder;
@@ -84,15 +82,14 @@
 
 .page-header__bottom {
     position: relative;
-    z-index:2;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // padding:10px;
     @media screen and (max-width: 1110px) {
         display: block;
-        padding-top: 25px;
-        @include clearfix();
+        padding-top: 22px;
+        padding-bottom: 22px;
         width: 90%;
     }
 }
@@ -176,6 +173,7 @@
 }
 
 .page-header__download {
+    position: relative;
     @include inline-block(middle);
     @include font-size(20px,
     27px);
@@ -183,25 +181,39 @@
     padding-bottom: 30px;
     color: $linkColor;
     padding-left: 35px;
-    background: url("../assets/img/svg/xls.svg") no-repeat 0 center;
-    @media screen and (max-width: 1300px) {
-        @include font-size(17px);
-    }
     @media screen and (max-width: 1110px) {
         position: relative;
-        top: -16px;
-        left:-10px;
-        float: left;
+        left: -10px;
         padding-top: 0px;
         padding-bottom: 0px;
         @include font-size(18px,
-        40px);
-        background: url("../assets/img/svg/xls.svg") no-repeat 0 5px;
-        z-index:-1;
+        24px);
+        z-index: -1;
     }
+    &:hover {
+        .icon-stroke {
+            stroke: #fff;
+            stroke-width:2px;
+            fill: $linkColor;
+            transition: fill 0.7s ease, stroke 0.7s ease;
+        }
+    }
+}
 
-    @media screen and (max-width: 767px) {
-        top: -13px;
+.page-header__download-icon {
+    @include inline-block(middle);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 35px;
+    height: 38px;
+    transform: translateY(-50%);
+    transition: all 0.4s ease;
+    svg {
+        transition: fill 0.7s ease, stroke 0.7s ease;
+    }
+    @media screen and (max-width: 1110px) {
+        top: 60%;
     }
 }
 

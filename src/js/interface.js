@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+    
+    
+
     //Навигация по страничкам сайта
     $('body').append(
         '<div style="position: fixed; z-index: 9999; bottom: 0; right: 0; background: #fff; border: solid 1px #000; width: 250px;"> \
@@ -10,7 +13,10 @@ $(document).ready(function() {
         </ol> \
     </div>');
 
-
+    //Svg4everybody
+     (function(){
+        svg4everybody({});
+     }());
 
     //Slideshow (product-card)
     (function() {
@@ -142,13 +148,6 @@ $(document).ready(function() {
 
                 otherContent.stop(true, true).slideUp(duration);
                 content.stop(true, true).slideDown(duration);
-
-                //Mobile Scroll
-                // $('.mobile-scroll').mCustomScrollbar({
-                //     axis: "y",
-                //     theme: "dark"
-                // });
-
 
             } else {
                 content.stop(true, true).slideUp(duration);
@@ -307,7 +306,7 @@ $(document).ready(function() {
                         if(!$preloader.hasClass('done')) {
                             $preloader.addClass('done');
                         };
-                    },2000);
+                    },1000);
                  };
             };
 

@@ -1,10 +1,22 @@
 /*=============================
 =            error            =
 =============================*/
-.error__text {
-	margin-bottom:20px;
-	color:$red;
+
+
+.error {
+	label {
+		display: none;
+	}
+
+	label.error__text {
+		display: block;
+	}
 }
 
+label.error__text {
+	display: none;
+	margin-bottom: 5px;
+	color:$red;
+}
 
 /*=====  End of error  ======*/

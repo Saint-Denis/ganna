@@ -4,7 +4,7 @@
 
 .burger-menu {
     position: absolute;
-    top: 83px;
+    top: 85px;
     right: 25px;
     width: 28px;
     height: 20px;
@@ -51,7 +51,7 @@
     }
     @media screen and (max-width:767px) {
         @include inline-block(middle);
-        top: 130px;
+        top: 132px;
     }
 }
 
@@ -87,6 +87,25 @@
     transform: rotate(-135deg);
     top: -9px;
 }
+
+
+
+.burger-menu:hover span:nth-child(1) {
+   top: -3px;
+}
+
+.burger-menu:hover span:nth-child(3) {
+   top: 3px;
+}
+
+.burger-menu.open:hover span:nth-child(1) {
+   top: 9px;
+}
+
+.burger-menu.open:hover span:nth-child(3) {
+   top: -9px;
+}
+
 
 
 /*=====  End of burger-menu  ======*/
