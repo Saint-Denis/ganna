@@ -3,27 +3,54 @@
 ================================*/
 
 .download {
-    display: table;
-
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+     @media screen and (max-width: 767px) {
+        flex-wrap:wrap;
+     }
+    &:hover {
+        .icon-stroke {
+            stroke: #fff;
+            stroke-width: 2px;
+            fill: $linkColor;
+            fill-opacity: .9;
+            transition: fill 0.7s ease, stroke 0.7s ease;
+        }
+    }
 }
 
 .download a.download__link {
     position: relative;
-    @include font-size(17px,24px);
-    @include inline-block(top);
+    @include font-size(17px, 24px);
+    @include inline-block(middle);
     top: 2px;
-
     &::after {
         display: none;
     }
 }
 
 .download__icons {
-    @include inline-block(top);
+    @include inline-block(middle);
+     max-height: 38px;
+     margin-right:5px;
+}
 
-    img {
+.download__icon {
+    cursor: pointer;
+    max-height: 38px;
+    @media screen and (max-width: 767px) {
+        position: relative;
+        top: 3px;
+    }
+    svg {
         width: 36px;
-        height: 36px!important;
+        height: 38px;
+        transition: fill 0.7s ease, stroke 0.7s ease;
+        @media screen and (max-width: 767px) {
+            width: 26px;
+            height: 28px;
+        }
     }
 }
 

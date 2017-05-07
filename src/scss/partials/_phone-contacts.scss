@@ -13,12 +13,11 @@
     }
     @media screen and (max-width:767px) {
         @include inline-block(middle);
-        padding-top:6px;
+        padding-top: 6px;
         float: right;
         width: 50%;
         text-align: right;
         margin-right: 0px;
-       
     }
     @media screen and (max-width:480px) {
         width: auto;
@@ -29,6 +28,12 @@
     @include font-size(20px, 30px);
     @include inline-block(middle);
     text-transform: uppercase;
+    color: #000;
+    border-bottom: 1px dashed transparent;
+    transition: border-bottom 0.4s ease-in;
+    &:hover {
+        border-bottom: 1px dashed $linkColor;
+    }
     @media screen and (max-width: 1300px) {
         margin-right: 0px;
     }
