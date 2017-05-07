@@ -118,6 +118,7 @@
 
 .mobile-nav__link {
     position: relative;
+    @include cormac(extralight);
     @include inline-block(middle);
     @include font-size(44px, 48px);
     color: #000;
@@ -126,7 +127,7 @@
     &::after {
         content: "";
         position: absolute;
-        top: 60%;
+        top: 50%;
         right: 0;
         width: 6px;
         height: 4px;
@@ -165,10 +166,7 @@
     }
 }
 
-.mCSB_scrollTools {
-    left: 0px!important;
-    right: auto!important;
-}
+
 
 .mobile-nav__table {
     display: table;

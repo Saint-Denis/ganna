@@ -48,7 +48,7 @@
                             </div>
                         </form>
                         <div class="phone-contacts">
-                            <a href="tel:+375 212 692-277" class="phone-contacts__number">+375 212 692-277</a>
+                            <a href="tel:+375212692277" class="phone-contacts__number">+375 212 692-277</a>
                         </div>
                         <a href="#" class="contacts-link">Контакты</a>
                         <div class="language">
@@ -368,15 +368,15 @@
                                             fill-rule: evenodd;
                                         }
                                         </style>
-                                        <filter id="filter" x="0.5" y="0.5" width="34" height="37" filterUnits="userSpaceOnUse">
+                                        <filter id="filter-xls-1" x="0.5" y="0.5" width="34" height="37" filterUnits="userSpaceOnUse">
                                             <feOffset result="offset" dy="2" in="SourceAlpha" />
                                             <feGaussianBlur result="blur" stdDeviation="3.317" />
                                             <feFlood result="flood" flood-color="#af9632" />
                                             <feComposite result="composite" operator="in" in2="blur" />
-                                            <feBlend result="blend" in="SourceGraphic" />
+                                            <feBlend result="blend" in="SourceGraphic" in2="blend" />
                                         </filter>
                                     </defs>
-                                    <g style="fill: #fff; filter: url(#filter)">
+                                    <g style="fill: #fff; filter: url(#filter-xls-1)">
                                         <rect id="rect" class="all-icon" x="10.5" y="8.5" width="13" height="16" style="stroke: inherit; filter: none; fill: inherit" />
                                     </g>
                                     <use xlink:href="#rect" style="stroke: #dcdcdc; filter: none; fill: none" />
@@ -949,7 +949,7 @@
                 </div>
                 <div class="page-footer__bottom">
                     <div class="page-footer__copyright">
-                        © 2016 ОАО «Витебская бройлерная птицефабрика»
+                        © 2017 ОАО «Витебская бройлерная птицефабрика»
                     </div>
                     <div class="page-footer__company">
                         Разработка сайта — <a href="http://nineseven.by/" target="_blank" class="page-footer__link">Nineseven</a>

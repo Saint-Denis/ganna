@@ -1,0 +1,116 @@
+/*==================================
+=            pagination            =
+==================================*/
+
+.pagination {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.pagination .pagination__list {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.pagination .pagination__list li {
+    margin-bottom: 0;
+}
+
+.pagination .pagination__list li::before {
+    display: none;
+}
+
+.pagination__list .pagination__link:not(.pagination__link--prev):not(.pagination__link--next)::after {
+    display: none;
+}
+
+.pagination__list {
+    display: flex;
+    font-size: 0;
+}
+
+.pagination__link {
+    position: relative;
+    @include inline-block(middle);
+    @include font-size(17px, 1);
+    padding: 9px 15px;
+    transition: background 0.4s ease-in;
+    &:not(.pagination__link--prev):not(.pagination__link--next):hover {
+        background: #fff;
+    }
+}
+
+.pagination__link--prev,
+.pagination__link--next {
+    padding: 7px 0px;
+}
+
+.pagination__link--prev {
+    margin-right: 40px;
+}
+
+.pagination__link--next {
+    margin-left: 40px;
+}
+
+.pagination__item.active .pagination__link {
+    background: #fff;
+    pointer-events: none;
+    transition: background 0.4s ease-in;
+}
+
+.pagination__item.disabled .pagination__link {
+    color: $grey;
+    pointer-events: none;
+    &::after {
+        display: none;
+    }
+}
+
+.pagination__arrow {
+    @include inline-block(middle);
+}
+
+.pagination__link--prev {
+    margin-left: 25px;
+}
+
+.pagination__link--prev--next {
+    margin-left: 25px;
+}
+
+.pagination__link--prev .pagination__arrow {
+    position: absolute;
+    top: 55%;
+    left: -25px;
+    transform: translateY(-50%);
+    transition: left 0.3s ease-in;
+}
+
+.pagination__link--next .pagination__arrow {
+    position: absolute;
+    top: 55%;
+    right: -25px;
+    transform: translateY(-50%);
+    transition: right 0.3s ease-in;
+}
+
+.pagination__link--next:hover .pagination__arrow {
+    right: -30px;
+}
+
+.pagination__link--prev:hover .pagination__arrow {
+    left: -30px;
+}
+
+.pagination__item.disabled .pagination__link--prev:hover .pagination__arrow {
+    left: -25px;
+}
+
+.pagination__item.disabled .pagination__link--next:hover .pagination__arrow {
+    right: -25px;
+}
+
+
+/*=====  End of pagination  ======*/
