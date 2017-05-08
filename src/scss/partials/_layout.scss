@@ -8,21 +8,72 @@
     justify-content: space-between;
     overflow-x: hidden;
 
+    //Модификации сетки бустрапа под дизайн сайта
+    .container-fluid {
+        max-width: 1275px;
+        margin: 0 auto;
+    }
+    &--padding {
+        .container-fluid {
+            @media (min-width: 320px) {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            @media (min-width:992px) {
+                padding-left: 135px;
+                padding-right: 15px;
+            }
+            @media (min-width:1110px) {
+                padding-left: 125px;
+                padding-right: 15px;
+            }
+            @media (min-width:1200px) {
+                padding-left: 135px;
+                padding-right: 214px;
+            }
+            @media (min-width:1300px) {
+                padding-left: 214px;
+                padding-right: 214px;
+            }
+        }
+    }
+    &--padding-left {
+        .container-fluid {
+            @media (min-width: 320px) {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            @media (min-width:1200px) {
+                padding-left: 135px;
+                padding-right: 15px;
+            }
+            @media (min-width:1300px) {
+                padding-left: 214px;
+                padding-right: 15px;
+            }
+        }
+    }
+    &--no-padding {
+        .no-gutters {
+            margin-left: 0;
+            margin-right: 0;
+            align-items: flex-start;
+        }
+        .no-gutters > .col,
+        .no-gutters > [class*="col-"] {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .container-fluid {
+            @media (min-width: 1300px) {
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+        }
+    }
     &.hidden {
-        overflow:hidden;
-    }
-
-    &--product {
-    	.container-fluid {
-    		padding-right:15px;
-    	}
-    }
-
-    &--product-list {
-    	.container-fluid {
-    		padding-left:0;
-    		padding-right:15px;
-    	}
+        overflow: hidden;
     }
 }
 

@@ -1,11 +1,18 @@
 /*==================================
 =            pagination            =
 ==================================*/
-
+.layout--text .pagination {
+    margin-top:40px;
+}
 .pagination {
     width: 100%;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
+    margin-left: 25px;
+    @media screen and (max-width: 480px) {
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .pagination .pagination__list {
@@ -39,6 +46,9 @@
     &:not(.pagination__link--prev):not(.pagination__link--next):hover {
         background: #fff;
     }
+    @media screen and (max-width:767px) {
+        padding: 9px 8px;
+    }
 }
 
 .pagination__link--prev,
@@ -48,10 +58,24 @@
 
 .pagination__link--prev {
     margin-right: 40px;
+    @media screen and (max-width: 767px) {
+        margin-right: 15px;
+    }
+    @media screen and (max-width: 480px) {
+        margin-right: 5px;
+        @include font-size(15px, 19px);
+    }
 }
 
 .pagination__link--next {
     margin-left: 40px;
+    @media screen and (max-width: 767px) {
+        margin-left: 15px;
+    }
+    @media screen and (max-width: 480px) {
+        margin-left: 5px;
+        @include font-size(15px, 19px);
+    }
 }
 
 .pagination__item.active .pagination__link {
@@ -72,20 +96,15 @@
     @include inline-block(middle);
 }
 
-.pagination__link--prev {
-    margin-left: 25px;
-}
-
-.pagination__link--prev--next {
-    margin-left: 25px;
-}
-
 .pagination__link--prev .pagination__arrow {
     position: absolute;
     top: 55%;
     left: -25px;
     transform: translateY(-50%);
     transition: left 0.3s ease-in;
+    @media screen and (max-width: 767px) {
+        left: -15px;
+    }
 }
 
 .pagination__link--next .pagination__arrow {
@@ -94,6 +113,9 @@
     right: -25px;
     transform: translateY(-50%);
     transition: right 0.3s ease-in;
+    @media screen and (max-width: 767px) {
+        right: -15px;
+    }
 }
 
 .pagination__link--next:hover .pagination__arrow {

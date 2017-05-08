@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-    
-    
+
+
 
     //Навигация по страничкам сайта
     $('body').append(
@@ -10,13 +10,34 @@ $(document).ready(function() {
         <ol> \
             <li><a href="./text.html" style="color:#000;">Текстовая</a></li> \
             <li><a href="./ganna_product_03.html" style="color:#000;">Карточка товара</a></li> \
+            <li><a href="./ganna_spisok_tovara_01.html" style="color:#000;">Список товара</a></li> \
         </ol> \
     </div>');
 
     //Svg4everybody
-     (function(){
+    (function() {
         svg4everybody({});
-     }());
+    }());
+
+    //Text truncat of product-card && Equal height 
+    (function() {
+        if ($('.product-card__preview').length > 0) {
+            $('.product-card__preview').dotdotdot({
+                height: 75,
+                watch: 'window'
+            });
+        };
+
+        if ($('.product-card').length > 0) {
+            $('.product-card').matchHeight({
+                byRow: true,
+                property: 'min-height',
+                target: null,
+                remove: false
+            });
+        };
+
+    }());
 
     //Slideshow (product-card)
     (function() {
@@ -278,40 +299,58 @@ $(document).ready(function() {
 
 });
 
+//Remove Equal height on mobile
+(function() {
+
+    $(window).on('load resize', function() {
+        if ($(window).width() <= 767) {
+            $('.product-card').matchHeight({ remove: true });
+        } else {
+            if ($('.product-card').length > 0) {
+                $('.product-card').matchHeight({
+                    byRow: true,
+                    property: 'min-height',
+                    target: null,
+                    remove: false
+                });
+            };
+        }
+    })
+}());
 
 //Preloader
 (function() {
     $(window).on('load', function() {
-       
-            var $preloader = $('.preloader'),
-                $images = document.images,
-                $imagesCount = $images.length,
-                $percentWindow = $('.preloader__percent'),
-                $imagesLoadedCount = 0;
+
+        var $preloader = $('.preloader'),
+            $images = document.images,
+            $imagesCount = $images.length,
+            $percentWindow = $('.preloader__percent'),
+            $imagesLoadedCount = 0;
 
 
-            for( var i = 0; i < $imagesCount; i++) {
-                    var $imageClone = new Image;
-                        $imageClone.onload = imageLoad;
-                        $imageClone.onerror = imageLoad;
-                        $imageClone.src = $images[i].src;
+        for (var i = 0; i < $imagesCount; i++) {
+            var $imageClone = new Image;
+            $imageClone.onload = imageLoad;
+            $imageClone.onerror = imageLoad;
+            $imageClone.src = $images[i].src;
+        };
+
+        function imageLoad() {
+            $imagesLoadedCount++;
+            $percentWindow.html((((100 / $imagesCount) * $imagesLoadedCount) << 0) + '%');
+
+            if ($imagesLoadedCount >= $imagesCount) {
+                setTimeout(function() {
+                    if (!$preloader.hasClass('done')) {
+                        $preloader.addClass('done');
+                    };
+                }, 1000);
             };
-
-            function imageLoad() {
-                $imagesLoadedCount++;
-                $percentWindow.html( ( ((100/$imagesCount) * $imagesLoadedCount) << 0) + '%');
-
-                 if($imagesLoadedCount >=$imagesCount) {
-                    setTimeout(function() {
-                        if(!$preloader.hasClass('done')) {
-                            $preloader.addClass('done');
-                        };
-                    },1000);
-                 };
-            };
+        };
 
 
-    
+
     });
 }());
 

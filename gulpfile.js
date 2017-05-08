@@ -147,7 +147,7 @@ gulp.task("browser-sync", function() {
         server: {
             baseDir: './build/'
         },
-        startPath: "/text.html"
+        startPath: "/ganna_spisok_tovara_01.html"
 
     });
 });

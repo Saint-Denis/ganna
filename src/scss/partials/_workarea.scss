@@ -5,14 +5,14 @@
 .workarea {
     h1 {
         @include cormac(extralight);
-        @include font-size(50px, 60px);
+        @include font-size(50px, 54px);
         margin: 0;
         margin-bottom: 45px;
         @media screen and (max-width: 768px) {
-            @include font-size(48px, 58px);
+            @include font-size(48px, 52px);
         }
         @media screen and (max-width:767px) {
-            @include font-size(40px, 42px);
+            @include font-size(40px, 44px);
             margin-bottom: 25px;
         }
         span {
@@ -21,14 +21,14 @@
     }
     h2 {
         @include cormac(extralight);
-        @include font-size(44px, 54px);
+        @include font-size(44px, 48px);
         margin: 0;
         margin-bottom: 15px;
         @media screen and (max-width: 768px) {
-            @include font-size(40px, 50px);
+            @include font-size(40px, 44px);
         }
         @media screen and (max-width:767px) {
-            @include font-size(36px, 38px);
+            @include font-size(36px, 40px);
             margin-bottom: 15px;
         }
         span {
@@ -37,7 +37,7 @@
     }
     h3 {
         @include cormac(extralight);
-        @include font-size(32px, 42px);
+        @include font-size(32px, 36px);
         margin: 0;
         margin-bottom: 15px;
         @media screen and (max-width: 767px) {
@@ -50,18 +50,18 @@
     }
     h4 {
         @include cormac(extralight);
-        @include font-size(24px, 34px);
+        @include font-size(24px, 28px);
         margin: 0;
         margin-bottom: 15px;
         @media screen and (max-width: 767px) {
-            @include font-size(24px, 24px);
+            @include font-size(24px, 28px);
         }
         span {
             color: #b0b0b0;
         }
     }
     h5 {
-        @include font-size(20px, 30px);
+        @include font-size(20px, 24px);
         font-weight: 400;
         margin: 0;
         margin-bottom: 15px;
