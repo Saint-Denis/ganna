@@ -11,12 +11,11 @@
     max-width: 290px;
     margin-right: 25px;
     @media screen and (max-width: 1300px) {
-    	max-width: 250px;
-    	margin-right: 15px;
+        max-width: 250px;
+        margin-right: 15px;
     }
-
     @media screen and (max-width: 1200px) {
-    	display: none;
+        display: none;
     }
 }
 
@@ -46,15 +45,24 @@
     pointer-events: none;
     &::after {
         content: '';
+        // position: absolute;
+        // top: 50%;
+        // transform: translateY(-50%);
+        // right: -10px;
+        // width: 0;
+        // height: 0;
+        // border-top: 29px solid transparent;
+        // border-left: 10px solid #ffdc4c;
+        // border-bottom: 29px solid transparent;
+        display: block;
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 0;
         right: -10px;
-        width: 0;
-        height: 0;
-        border-top: 29px solid transparent;
-        border-left: 10px solid #ffdc4c;
-        border-bottom: 29px solid transparent;
+        width: 10px;
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 20' height='20' width='10'%3E%3Cpath d='M0 0L10 10 0 20z' fill='%23ffdc4c'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
     }
 }
 
@@ -68,11 +76,10 @@
         }
     }
     @media screen and (max-width:1300px) {
-    	@include font-size(20px,24px);
+        @include font-size(20px,
+        24px);
         padding-left: 10px;
     }
-
-
 }
 
 .sidebar__arrow {
@@ -111,7 +118,8 @@
 }
 
 .sidebar__lv2-link {
-    @include font-size(15px, 19px);
+    @include font-size(15px,
+    19px);
 }
 
 .sidebar .sidebar__lv2-item::before {
