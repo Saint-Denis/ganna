@@ -2,10 +2,15 @@
 =            download            =
 ================================*/
 
+.layout--text .download {
+     margin-bottom: 15px;
+}
+
 .download {
+    position: relative;
+    left:-10px;
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
     @media screen and (max-width: 767px) {
         flex-wrap: wrap;
     }
@@ -37,13 +42,13 @@
 
 .download__icons {
     @include inline-block(middle);
-    max-height: 38px;
     margin-right: 5px;
 }
 
 .download__icon {
+
     cursor: pointer;
-    max-height: 41px;
+    max-height: 38px;
     @media screen and (max-width: 767px) {
         position: relative;
         top: 3px;

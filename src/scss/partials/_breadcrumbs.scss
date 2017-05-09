@@ -6,13 +6,38 @@
     position: relative;
     padding: 6px 0px;
     background: #fff;
-
     &.z-index {
-        z-index:-1;
+        z-index: -1;
     }
-    
     .container-fluid {
         font-size: 0;
+    }
+}
+
+.breadcrumbs__container {
+    width: 100%;
+    max-width: 1275px;
+    padding: 0px;
+    margin: 0 auto;
+    @media (min-width: 320px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    @media (min-width:992px) {
+        padding-left: 135px;
+        padding-right: 0;
+    }
+    @media (min-width:1110px) {
+        padding-left: 125px;
+        padding-right: 0;
+    }
+    @media (min-width:1200px) {
+        padding-left: 135px;
+        padding-right: 0;
+    }
+    @media (min-width:1300px) {
+        padding-left: 214px;
+        padding-right: 0;
     }
 }
 
@@ -31,14 +56,14 @@
             left: 0;
             bottom: 0px;
             z-index: 5;
-            transition:bottom 0.2s ease-in-out;
+            transition: bottom 0.2s ease-in-out;
             background: $linkColor;
             z-index: 1;
         }
         &:hover {
             &::after {
                 bottom: 2px;
-                transition:bottom 0.2s ease-in-out;
+                transition: bottom 0.2s ease-in-out;
             }
         }
     }

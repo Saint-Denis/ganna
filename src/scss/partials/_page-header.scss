@@ -28,16 +28,19 @@
     @media screen and (max-width: 1300px) {
         justify-content: space-between;
         align-items: center;
+        
     }
     @media screen and (max-width:1110px) {
         margin-left: 0px;
         padding-top: 18px;
         padding-bottom: 15px;
+        
         &.in-search {
             display: block;
             transform: translateX(0px);
             opacity: 1;
             transition: transform 0.5s ease-in;
+
             .phone-contacts,
             .language,
             .contacts-link {
