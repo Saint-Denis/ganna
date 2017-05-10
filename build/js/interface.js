@@ -320,40 +320,40 @@ $(document).ready(function() {
 }());
 
 //Preloader
-(function() {
-    $(window).on('load', function() {
+// (function() {
+//     $(window).on('load', function() {
 
-        var $preloader = $('.preloader'),
-            $images = document.images,
-            $imagesCount = $images.length,
-            $percentWindow = $('.preloader__percent'),
-            $imagesLoadedCount = 0;
-
-
-        for (var i = 0; i < $imagesCount; i++) {
-            var $imageClone = new Image;
-            $imageClone.onload = imageLoad;
-            $imageClone.onerror = imageLoad;
-            $imageClone.src = $images[i].src;
-        };
-
-        function imageLoad() {
-            $imagesLoadedCount++;
-            $percentWindow.html((((100 / $imagesCount) * $imagesLoadedCount) << 0) + '%');
-
-            if ($imagesLoadedCount >= $imagesCount) {
-                setTimeout(function() {
-                    if (!$preloader.hasClass('done')) {
-                        $preloader.addClass('done');
-                    };
-                }, 1000);
-            };
-        };
+//         var $preloader = $('.preloader'),
+//             $images = document.images,
+//             $imagesCount = $images.length,
+//             $percentWindow = $('.preloader__percent'),
+//             $imagesLoadedCount = 0;
 
 
+//         for (var i = 0; i < $imagesCount; i++) {
+//             var $imageClone = new Image;
+//             $imageClone.onload = imageLoad;
+//             $imageClone.onerror = imageLoad;
+//             $imageClone.src = $images[i].src;
+//         };
 
-    });
-}());
+//         function imageLoad() {
+//             $imagesLoadedCount++;
+//             $percentWindow.html((((100 / $imagesCount) * $imagesLoadedCount) << 0) + '%');
+
+//             if ($imagesLoadedCount >= $imagesCount) {
+//                 setTimeout(function() {
+//                     if (!$preloader.hasClass('done')) {
+//                         $preloader.addClass('done');
+//                     };
+//                 }, 1000);
+//             };
+//         };
+
+
+
+//     });
+// }());
 
 //Scroll on table
 (function() {

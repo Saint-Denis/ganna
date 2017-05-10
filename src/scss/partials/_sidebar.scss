@@ -77,13 +77,8 @@
     }
 }
 
-.sidebar__arrow {
-    position: absolute;
-    top: 56%;
-    right: -12px;
-    transform: translateY(-50%);
-    transition: right 0.3s ease-in;
-}
+
+
 
 .sidebar__title > .sidebar__link {
     padding-left: 0;
@@ -141,6 +136,19 @@
     transition: border-bottom 0.3s ease-in;
     &:hover {
         border-bottom: 1px solid $linkColor;
+    }
+}
+
+.sidebar__link .sidebar__arrow {
+    position: absolute;
+    top: 50%;
+    right: -12px;
+    transform: translateY(-50%);
+    transition: right 0.3s ease-in;
+    border-bottom:0;
+
+    &:hover {
+        border-bottom:0;
     }
 }
 
