@@ -13,6 +13,7 @@ $(document).ready(function() {
             <li><a href="./ganna_spisok_tovara_01.html" style="color:#000;">Список товара</a></li> \
             <li><a href="./ganna_produkcia_01.html" style="color:#000;">Продукция</a></li> \
             <li><a href="./ganna_siraya_01.html" style="color:#000;">Сырая продукция</a></li> \
+            <li><a href="./index.html" style="color:#000;">Главная</a></li> \
         </ol> \
     </div>');
 

@@ -1,0 +1,69 @@
+/*==========================================
+=            presentation-video            =
+==========================================*/
+
+.presentation-video {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    .presentation-video__icon-play::after {
+        display: none;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+        transition: background 0.3s ease-in;
+    }
+    &:hover::before{
+        background: rgba(0, 0, 0, 0.1);
+        transition: background 0.3s ease-in;
+    }
+}
+
+.presentation-video__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-size: cover!important;
+    background-repeat: no-repeat!important;
+    background-position: center center!important;
+}
+
+.presentation-video__wrapper h1 {
+    position: relative;
+    color: #fff;
+    max-width: 550px;
+    margin-bottom: 45px;
+    z-index: 2;
+    span {
+        color: #fff;
+        @include font-size(80px, 84px);
+    }
+}
+
+.presentation-video__wrapper .presentation-video__icon-play {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 82px;
+    height: 82px;
+    background: url('../assets/img/svg/play-circle.svg') no-repeat 0 0;
+    background-size: cover;
+    z-index: 2;
+}
+
+
+/*=====  End of presentation-video  ======*/

@@ -13,6 +13,11 @@
         max-width: 1275px;
         margin: 0 auto;
     }
+
+    &--index .page-content{
+        padding-top:30px;
+    }
+    
     &--padding {
         .container-fluid {
             @media (min-width: 320px) {
