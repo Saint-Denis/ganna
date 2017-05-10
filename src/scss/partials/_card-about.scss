@@ -12,6 +12,7 @@
 .card-about__wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     width: 100%;
 }
 
@@ -20,10 +21,7 @@
 }
 
 .card-about__storage {
-    width: 385px;
-    @media screen and (max-width: 480px) {
-        width: 280px;
-    }
+    width: 100%;
 }
 
 .card-about__storage-wrap {
@@ -43,7 +41,7 @@
         background: url('../assets/img/another/dots.png') repeat-x 0 0;
         z-index: 1;
         @media screen and (max-width: 480px) {
-            display: none;
+            bottom: 3px;
         }
     }
 }
@@ -54,7 +52,8 @@
     background: $bodybg;
     z-index: 1;
     @media screen and (max-width: 480px) {
-        max-width: 140px;
+        @include font-size(15px, 19px);
+        white-space:nowrap;
     }
 }
 
@@ -64,7 +63,8 @@
     background: $bodybg;
     z-index: 1;
     @media screen and (max-width: 480px) {
-        max-width: 140px;
+        @include font-size(15px, 19px);
+        white-space:nowrap;
     }
 }
 
@@ -94,7 +94,6 @@
     position: absolute;
     top: 0;
     left: 0;
-   
     svg {
         rect {
             stroke: #f6c756;
