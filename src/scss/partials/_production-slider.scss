@@ -1,0 +1,44 @@
+/*=========================================
+=            production-slider            =
+=========================================*/
+
+.production-slider {
+    width: 83.529411%;
+    @media screen and (max-width:1110px) {
+		width: 100%;
+	}
+}
+
+.production-slider__pic {
+    width: 445px;
+    height: 425px;
+}
+
+.production-slider__pic {
+	float:left;
+    background-size: contain!important;
+    background-repeat: no-repeat!important;
+    background-position: center center!important;
+    margin-right:40px;
+}
+
+.production-slider__about {
+	padding-top: 40px;
+    float:left;
+}
+
+.production-slider .production-slider__desc {
+    max-width: 375px;
+    margin-bottom:35px;
+}
+
+.production-slider__title {
+    max-width: 320px;
+}
+
+.production-slider__slide {
+	@include clearfix();
+}
+
+
+/*=====  End of production-slider  ======*/

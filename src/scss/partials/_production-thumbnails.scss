@@ -1,0 +1,57 @@
+/*=========================================
+=            production-slider           =
+=========================================*/
+
+.production-thumbnails {
+    @media screen and (max-width: 1110px) {
+    	height:170px;
+    }
+}
+
+.production-thumbnails .slick-list {
+    padding-left: 30px !important;
+    padding-right: 40px !important;
+     @media screen and (max-width: 1110px) {
+     	 padding-left: 0!important;
+    	 padding-right: 0!important;
+     }
+}
+
+.production-thumbnails__item {
+    width: 145px!important;
+    height: 145px!important;
+    cursor: pointer;
+}
+
+.production-thumbnails__item__pic {
+    width: 100%;
+    height: 100%;
+    background-size: contain!important;
+    background-repeat: no-repeat!important;
+    background-position: center center!important;
+}
+
+.production-thumbnails .slick-slide.slick-current {
+    position: relative;
+    border: 2px solid #f9b000;
+    transition: border 0.3s ease-in;
+}
+
+.production-thumbnails .slick-slide.slick-current::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -35px;
+    width: 0;
+    height: 0;
+    z-index: 50;
+    transform: translateY(-50%);
+    border-top: 20px solid transparent;
+    border-left: 15px solid #f9b000;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    transition: border 0.3s ease-in;
+}
+
+
+/*=====  End of production-slider  ======*/
