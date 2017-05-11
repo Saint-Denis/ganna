@@ -84,7 +84,7 @@ $(document).ready(function() {
         });
 
 
-       $prodThumbnails.slick({
+        $prodThumbnails.slick({
             infinite: true,
             slidesToShow: 3,
             slidesToScroll: 1,
@@ -93,24 +93,13 @@ $(document).ready(function() {
             centerMode: true,
             centerPadding: '0px',
             focusOnSelect: true,
-            verticalSwiping:true,
+            verticalSwiping: true,
             vertical: true,
             responsive: [{
                 breakpoint: 1100,
                 settings: {
-                     mobileFirst: true,
+                    verticalSwiping: false,
                     vertical: false
-                }
-            }, {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 3
-                }
-            }, {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    slidesToShow: 3
                 }
             }]
         });
