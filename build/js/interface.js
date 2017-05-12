@@ -27,6 +27,35 @@ $(document).ready(function() {
         $('[data-fancybox]').fancybox();
     }());
 
+    //Shares
+    (function() {
+        if ($('.shares-slider__title').length > 0) {
+            $('.shares-slider__title').dotdotdot({
+                height: 100,
+                watch: 'window'
+            });
+        }
+    }());
+
+     //Shares slider
+    (function() {
+         $('.shares-slider').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            dots:true,
+            responsive: [{
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }]
+        });
+    }());
+
+
     //Text truncat of product-card && Equal height 
     (function() {
         if ($('.product-card__preview').length > 0) {
@@ -44,6 +73,25 @@ $(document).ready(function() {
                 remove: false
             });
         };
+
+    }());
+
+    //Slider (news-slider)
+    (function() {
+        var $newsSlider = $('.news-slider');
+        $newsSlider.slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: true,
+            responsive: [{
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }]
+        });
 
     }());
 
