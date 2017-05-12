@@ -1,13 +1,18 @@
 /*==============================
 =            shares            =
 ==============================*/
+.shares {
+	padding:25px 0;
+	padding-top:0;
 
+	 @media screen and (max-width: 767px) {
+        padding-bottom: 20px;
+    }
+}
 .shares__wrapper {
-	position: relative;
-	width: 100%;
+    position: relative;
+    width: 100%;
 }
 
 
-
 /*=====  End of shares  ======*/
-	

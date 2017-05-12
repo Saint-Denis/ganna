@@ -3,10 +3,8 @@
 ==================================*/
 
 .info-block {
-    padding: 45px 0;
-    @media screen and (max-width: 992px) {
-        padding: 25px 0;
-    }
+    padding: 25px 0;
+    padding-bottom:0;
 
     @media screen and (max-width: 767px) {
         padding: 20px 0;
@@ -18,7 +16,7 @@
     [class*="col-"] {
         padding: 0 5px;
         @media screen and (max-width: 767px) {
-            margin-bottom: 25px;
+            margin-bottom: 40px;
             &:last-child {
                 margin-bottom: 0;
             }

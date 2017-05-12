@@ -7,17 +7,19 @@
     flex-direction: column;
     justify-content: space-between;
     overflow-x: hidden;
-
     //Модификации сетки бустрапа под дизайн сайта
     .container-fluid {
         max-width: 1275px;
         margin: 0 auto;
     }
-
-    &--index .page-content{
-        padding-top:30px;
+    &--index .page-content {
+        padding-top: 30px;
+        padding-bottom: 45px;
+        @media screen and (max-width: 767px) {
+            padding-top: 40px;
+            padding-bottom: 20px;
+        }
     }
-    
     &--padding {
         .container-fluid {
             @media (min-width: 320px) {
@@ -69,7 +71,6 @@
             padding-right: 0;
             padding-left: 0;
         }
-
         .container-fluid {
             @media (min-width: 1300px) {
                 padding-left: 0px;
