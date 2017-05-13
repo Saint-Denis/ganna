@@ -14,6 +14,7 @@ $(document).ready(function() {
             <li><a href="./ganna_produkcia_01.html" style="color:#000;">Продукция</a></li> \
             <li><a href="./ganna_siraya_01.html" style="color:#000;">Сырая продукция</a></li> \
             <li><a href="./index.html" style="color:#000;">Главная</a></li> \
+             <li><a href="./ganna_map_02.html" style="color:#000;">Контакты</a></li> \
         </ol> \
     </div>');
 
@@ -21,6 +22,114 @@ $(document).ready(function() {
     (function() {
         svg4everybody({});
     }());
+
+    //Google cart on contacts page
+    (function() {
+
+        //Точка до основного магазина
+        var latitude = 55.172596,
+            longtitude = 30.270227,
+            map_zoom = 12;
+
+        //Координаты остальных городов
+        var locations = [
+            ["moskovskaya.99", 55.172596, 30.270227],
+            ["ludnikova.16", 55.195460, 30.229291],
+            ["chern.42", 55.168563, 30.199737],
+            ["schkolnaya.16", 55.288131, 30.261349],
+        ];
+
+
+
+        //Создание точки на карте
+        var map_options = {
+            center: new google.maps.LatLng(latitude, longtitude),
+            zoom: map_zoom,
+            panControl: false,
+            zoomControl: false,
+            mapTypeControl: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            scrollwheel: false
+
+        }
+
+        //Инит карты
+        var map = new google.maps.Map(document.querySelector('.map'), map_options);
+
+        //Добавление маркеров
+
+        //Добавление лейбла у маркера
+        var infoWindowContent = [
+            ['<div class="gm-style-wrapper"><div class="gm-wrapper"><div class="gm-address">пр-т Московский, 99</div></div>"Привет ганна 19!"</div>'],
+            ['<div class="map-label">+ "Привет ганна 16!"</div>'],
+            ['<div class="map-label">+ "Привет ганна 42!"</div>'],
+            ['<div class="map-label">+ "Привет ганна 16!"</div>']
+        ];
+
+        var infoWindow = new google.maps.InfoWindow();
+        var marker, i;
+        var latlngbounds = new google.maps.LatLngBounds();  
+
+
+        for (i = 0; i < locations.length; i++) {
+            var myLatLng = new google.maps.LatLng(locations[i][1], locations[i][2]);
+
+            //Добавляем координаты маркера в область
+            latlngbounds.extend(myLatLng);
+
+            marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                visible: true,
+                animation: google.maps.Animation.DROP,
+                icon: '../assets/img/icons/chick-marker.png'
+            });
+
+            //Центрируем маркеры
+            map.setCenter(latlngbounds.getCenter(), map.fitBounds(latlngbounds));  
+
+
+
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+                    infoWindow.setContent(infoWindowContent[i][0]);
+                    infoWindow.open(map, marker);
+                }
+            })(marker, i));
+
+     
+
+        };
+
+
+
+        //Добавление иконок зума и уменьшения
+        function CustomZoomControl(controlDiv, map) {
+            var controlZoomIn = document.querySelector('.map-icon--plus'),
+                controlZoomOut = document.querySelector('.map-icon--minus');
+
+            controlDiv.append(controlZoomIn);
+            controlDiv.append(controlZoomOut);
+
+            google.maps.event.addDomListener(controlZoomIn, 'click', function() {
+                map.setZoom(map.getZoom() + 1);
+            });
+
+
+            google.maps.event.addDomListener(controlZoomOut, 'click', function() {
+                map.setZoom(map.getZoom() - 1);
+            });
+
+        }
+
+        var zoomControlDiv = document.createElement('div');
+        var zoomControl = new CustomZoomControl(zoomControlDiv, map);
+        map.controls[google.maps.ControlPosition.RIGHT_CENTER].push(zoomControlDiv);
+
+
+    }());
+
+
 
     //Fancybox on index page 
     (function() {
@@ -48,7 +157,7 @@ $(document).ready(function() {
             responsive: [{
                 breakpoint: 767,
                 settings: {
-                    arrows:false
+                    arrows: false
                 }
             }]
         });

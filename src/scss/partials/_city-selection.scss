@@ -1,0 +1,114 @@
+/*======================================
+=            city-selection            =
+======================================*/
+
+.city-selection {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    @media screen and (max-width: 992px) {
+        flex-wrap: wrap;
+    }
+    h1 {
+        margin-bottom: 0;
+        margin-right: 5px;
+        @media screen and (max-width: 767px) {
+            margin-bottom: 15px;
+        }
+    }
+    .sod_select {
+        width: auto;
+        @include cormac(extralight);
+        @include font-size(50px, 54px);
+        margin: 0;
+        background: transparent;
+        border: none;
+        @media screen and (max-width: 767px) {
+            font-family: 'Open Sans', Arial, sans-serif;
+            @include font-size(17px, 1);
+            background: #fff;
+            border: 1px solid #bababa;
+            width: 100%;
+        }
+        &::after {
+            display: none;
+            @media screen and (max-width: 767px) {
+                display: block;
+            }
+        }
+        &.open {
+            background: #fff;
+        }
+        @media screen and (max-width: 768px) {
+            @include font-size(48px, 52px);
+        }
+    }
+    .sod_select .sod_label {
+        position: relative;
+        @include inline-block(middle);
+        padding-right: 25px;
+        border-bottom: 2px dashed #edab5d;
+        transition: border-bottom 0.4s ease-in-out;
+        @media screen and (max-width: 767px) {
+            border-bottom: none;
+        }
+        &:hover {
+            border-bottom: 2px dashed transparent;
+            @media screen and (max-width: 767px) {
+                border-bottom: none;
+            }
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%) rotate(0deg);
+            width: 14px;
+            height: 9px;
+            background: url('../assets/img/svg/arrow-small-down.svg') no-repeat 0 0;
+            background-size: cover;
+            transition: all 0.4s ease-in-out;
+            @media screen and (max-width: 767px) {
+                display: none;
+            }
+        }
+    }
+    .sod_select.open .sod_label {
+        border-bottom: 2px dashed transparent;
+        @media screen and (max-width: 767px) {
+            border-bottom: none;
+        }
+    }
+    .sod_select.open .sod_label::after {
+        transform: rotate(180deg);
+        transition: all 0.4s ease-in-out;
+        top: 47%;
+    }
+    .sod_list_wrapper {
+        border: none;
+        @include font-size(24px,
+        28px);
+        @media screen and (max-width: 767px) {
+            font-family: 'Open Sans', Arial, sans-serif;
+            @include font-size(17px,
+            1);
+            border: 1px solid #bababa;
+            width: 100.5%;
+        }
+    }
+    .sod_select .sod_option {
+        padding: 11px 20px;
+        padding-bottom: 8px;
+        @media screen and (max-width: 767px) {
+            padding: 11px 15px;
+            padding-bottom: 11px;
+        }
+    }
+    .sod_select .sod_list {
+        max-height: 380px;
+    }
+}
+
+
+/*=====  End of city-selection  ======*/

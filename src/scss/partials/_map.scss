@@ -1,0 +1,52 @@
+/*===========================
+=            map            =
+===========================*/
+
+.map {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.map-icon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+    transition: all 0.35s ease-in;
+    margin-right: 110px;
+    margin-bottom: 25px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.map-icon--plus {
+    background-image: url('../assets/img/icons/plus.png');
+}
+
+.map-icon--minus {
+    background-image: url('../assets/img/icons/minus.png');
+}
+
+.gm-style-wrapper {
+    font-family: 'Open Sans', Arial, sans-serif;
+    @include font-size(17px,
+    24px);
+    font-weight:normal;
+}
+
+.gm-style {
+    height: 330px;
+    border-radius: 0!important;
+}
+
+.gm-style .gm-wrapper {
+    background: $linkColor!important;
+    height: 75px!important;
+}
+
+
+/*=====  End of map  ======*/
