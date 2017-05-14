@@ -21,6 +21,11 @@
     &:last-child {
         margin-bottom: 0;
     }
+    @media screen and (max-width: 1110px) {
+        margin-right: 20px;
+        width: 30px;
+        height: 30px;
+    }
 }
 
 .map-icon--plus {
@@ -31,21 +36,115 @@
     background-image: url('../assets/img/icons/minus.png');
 }
 
-.gm-style-wrapper {
+.infobox__wrapper {
+    position: relative;
     font-family: 'Open Sans', Arial, sans-serif;
     @include font-size(17px,
-    24px);
-    font-weight:normal;
+    20px);
+    font-weight: normal;
+    width: 335px;
+    background: #fff;
+    z-index: 2;
+    @media screen and (max-width: 480px) {
+        width: 100vw;
+    }
 }
 
-.gm-style {
-    height: 330px;
-    border-radius: 0!important;
+.infobox__address {
+    background: #ffdc4c;
+    padding: 15px 30px;
+    color: #88731e;
+    span {
+        @include inline-block(middle);
+        margin-bottom: 10px;
+        color: #000;
+    }
 }
 
-.gm-style .gm-wrapper {
-    background: $linkColor!important;
-    height: 75px!important;
+.infoBox > img {
+    position: relative;
+    width: 12px!important;
+    height: 12px!important;
+    z-index: 3;
+}
+
+.infobox__preview {
+    position: relative;
+    @include inline-block(middle);
+    border-bottom: 1px dashed #88731e;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: all 0.35s ease-in;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 56%;
+        left: -20px;
+        transform: translateY(-50%);
+        width: 16px;
+        height: 16px;
+        background: url("../assets/img/svg/photo-camera.svg") no-repeat 0 0;
+        background-size: cover;
+    }
+    &:hover {
+        border-bottom: 1px dashed transprent;
+    }
+    span {
+        @include inline-block(middle);
+        margin-bottom: 0;
+        transition: all 0.4s ease-in;
+    }
+}
+
+.infobox__photo {
+    display: none;
+    position: absolute;
+    left: -560px;
+    top: -200px;
+    @media screen and (max-width: 1110px) {
+        width: 335px;
+        height: 241px;
+        top: 38px;
+        left: -50px;
+        z-index: 1;
+    }
+    @media screen and (max-width: 480px) {
+        width: 100vw;
+    }
+    &.show {
+        display: block;
+    }
+    img {
+        max-width: 100%!important;
+    }
+}
+
+.infobox__container {
+    padding: 25px;
+}
+
+.infobox__item {
+    margin-bottom: 10px;
+}
+
+.infobox__what {
+    color: #a4a4a4;
+}
+
+.infobox__desc {
+    max-width: 200px;
+}
+
+.infobox__wrapper .infobox__desc a {
+    border-bottom: 1px dashed #000;
+    transition: all 0.35s ease-in;
+    &:hover {
+        border-bottom: 1px dashed transparent;
+    }
+}
+
+.infobox__wrapper .infobox__desc a::after {
+    display: none;
 }
 
 

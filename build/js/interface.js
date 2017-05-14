@@ -23,6 +23,9 @@ $(document).ready(function() {
         svg4everybody({});
     }());
 
+
+
+
     //Google cart on contacts page
     (function() {
 
@@ -31,7 +34,7 @@ $(document).ready(function() {
             longtitude = 30.270227,
             map_zoom = 12;
 
-        //Координаты остальных городов
+        //Координаты остальных маагазинов в Витебске
         var locations = [
             ["moskovskaya.99", 55.172596, 30.270227],
             ["ludnikova.16", 55.195460, 30.229291],
@@ -60,20 +63,137 @@ $(document).ready(function() {
 
         //Добавление лейбла у маркера
         var infoWindowContent = [
-            ['<div class="gm-style-wrapper"><div class="gm-wrapper"><div class="gm-address">пр-т Московский, 99</div></div>"Привет ганна 19!"</div>'],
-            ['<div class="map-label">+ "Привет ганна 16!"</div>'],
-            ['<div class="map-label">+ "Привет ганна 42!"</div>'],
-            ['<div class="map-label">+ "Привет ганна 16!"</div>']
+            ['<div class="infobox__wrapper">' +
+                '<div class="infobox__address">' +
+                '<span>пр-т Московский, 99</span><br>' +
+                '<div class="infobox__preview">' +
+                '<span>Смотреть фото</span>' +
+                '<div class="infobox__photo">' +
+                '<img src="../assets/img/content/map-photo.jpg">' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="infobox__container">' +
+                '<div class="infobox__item">' +
+                '<div class="infobox__what">Время работы</div>' +
+                '<div class="infobox__desc">08.00 - 21.00 (с/д 1-й понедельник месяца)</div>' +
+                '</div>' +
+                '<div class="infobox__item">' +
+                '<div class="infobox__what">Руководитель</div>' +
+                '<div class="infobox__desc">Свирщевская Ирина Михайловна</div>' +
+                '</div>' +
+                '<div class="infobox__item">' +
+                '<div class="infobox__what">Рабочий телефон</div>' +
+                '<div class="infobox__desc"><a href="tel:8(0212)29-03-32">8 (0212) 29-03-32</a></div>' +
+                '</div>' +
+                '</div>' +
+                '</div>'
+            ],
+            ['<div class="infobox__wrapper">' +
+                '<div class="infobox__address">' +
+                '<span>Витебск, пр-т Людникова, 16</span><br>' +
+                '<div class="infobox__preview">' +
+                '<span>Смотреть фото</span>' +
+                '<div class="infobox__photo">' +
+                '<img src="../assets/img/content/map-photo.jpg">' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="infobox__container">' +
+                '<div class="infobox__item">' +
+                '<div class="infobox__what">Время работы</div>' +
+                '<div class="infobox__desc">09.00 - 21.00 (с/д 1-й понедельник месяца)</div>' +
+                '</div>' +
+                '<div class="infobox__item">' +
+                '<div class="infobox__what">Руководитель</div>' +
+                '<div class="infobox__desc">Алла Михайловна</div>' +
+                '</div>' +
+                '<div class="infobox__item">' +
+                '<div class="infobox__what">Рабочий телефон</div>' +
+                '<div class="infobox__desc"><a href="tel:8(0212)29-03-32">8 (0212) 29-03-32</a></div>' +
+                '</div>' +
+                '</div>' +
+                '</div>'
+            ],
+            ['<div class="infobox__wrapper">' +
+                '<div class="infobox__address">' +
+                '<span>г. Витебск, пр-т Черняховского, 42</span><br>' +
+                '<div class="infobox__preview">' +
+                '<span>Смотреть фото</span>' +
+                '<div class="infobox__photo">' +
+                '<img src="../assets/img/content/map-photo.jpg">' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="infobox__container">' +
+                '<div class="infobox__item">' +
+                '<div class="infobox__what">Время работы</div>' +
+                '<div class="infobox__desc">09.00 - 21.00 (с/д 1-й понедельник месяца)</div>' +
+                '</div>' +
+                '<div class="infobox__item">' +
+                '<div class="infobox__what">Руководитель</div>' +
+                '<div class="infobox__desc">Дмитрий Иванов</div>' +
+                '</div>' +
+                '<div class="infobox__item">' +
+                '<div class="infobox__what">Рабочий телефон</div>' +
+                '<div class="infobox__desc"><a href="tel:8(0212)29-03-32">8 (0212) 29-03-32</a></div>' +
+                '</div>' +
+                '</div>' +
+                '</div>'
+            ],
+            ['<div class="infobox__wrapper">' +
+                '<div class="infobox__address">' +
+                '<span>г. Витебск, п/о Руба-2, ул. Школьная, 16</span><br>' +
+                '<div class="infobox__preview">' +
+                '<span>Смотреть фото</span>' +
+                '<div class="infobox__photo">' +
+                '<img src="../assets/img/content/map-photo.jpg">' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="infobox__container">' +
+                '<div class="infobox__item">' +
+                '<div class="infobox__what">Время работы</div>' +
+                '<div class="infobox__desc">09.00 - 21.00 (с/д 1-й понедельник месяца)</div>' +
+                '</div>' +
+                '<div class="infobox__item">' +
+                '<div class="infobox__what">Руководитель</div>' +
+                '<div class="infobox__desc">Юрий Иов</div>' +
+                '</div>' +
+                '<div class="infobox__item">' +
+                '<div class="infobox__what">Рабочий телефон</div>' +
+                '<div class="infobox__desc"><a href="tel:8(0212)29-03-32">8 (0212) 29-03-32</a></div>' +
+                '</div>' +
+                '</div>' +
+                '</div>'
+            ]
         ];
 
-        var infoWindow = new google.maps.InfoWindow();
+        //Создаем настройки для тултипа (плагин InfoBox)
+        var options = {
+            content: infoWindowContent,
+            disableAutoPan: false,
+            maxWidth: 0,
+            pixelOffset: new google.maps.Size(-160, -350),
+            zIndex: null,
+            closeBoxMargin: "15px 12px 0px 0px",
+            closeBoxURL: "../assets/img/svg/cancel.svg",
+            infoBoxClearance: new google.maps.Size(1, 1),
+            isHidden: false,
+            pane: "floatPane",
+            enableEventPropagation: false
+        };
+
+
+
+
+        var infoWindow = new InfoBox(options);
         var marker, i;
-        var latlngbounds = new google.maps.LatLngBounds();  
+        var latlngbounds = new google.maps.LatLngBounds();
 
 
         for (i = 0; i < locations.length; i++) {
             var myLatLng = new google.maps.LatLng(locations[i][1], locations[i][2]);
-
             //Добавляем координаты маркера в область
             latlngbounds.extend(myLatLng);
 
@@ -86,9 +206,7 @@ $(document).ready(function() {
             });
 
             //Центрируем маркеры
-            map.setCenter(latlngbounds.getCenter(), map.fitBounds(latlngbounds));  
-
-
+            map.setCenter(latlngbounds.getCenter(), map.fitBounds(latlngbounds));
 
             google.maps.event.addListener(marker, 'click', (function(marker, i) {
                 return function() {
@@ -97,10 +215,26 @@ $(document).ready(function() {
                 }
             })(marker, i));
 
-     
-
         };
 
+
+        //Открытие фото превью у лейбла
+        infoWindow.addListener("domready", function() {
+            $('.infobox__preview').on('click', function() {
+
+                if (!$('.infobox__photo').hasClass("show")) {
+
+                    $('.infobox__photo').addClass("show");
+                    $('.infobox__preview').find('span').text("Закрыть фото");
+
+                } else {
+                    $('.infobox__photo').removeClass("show");
+                    $('.infobox__preview').find('span').text("Смотреть фото");
+
+                }
+
+            });
+        });
 
 
         //Добавление иконок зума и уменьшения
@@ -127,6 +261,15 @@ $(document).ready(function() {
         map.controls[google.maps.ControlPosition.RIGHT_CENTER].push(zoomControlDiv);
 
 
+
+        //Центровка карты по центру при ресайзе
+        google.maps.event.addDomListener(window, 'resize',function() {
+            var center = map.getCenter();
+            google.maps.event.trigger(map, "resize");
+            map.setCenter(center);
+        });
+
+      
     }());
 
 
