@@ -1,0 +1,59 @@
+/*===================================
+=            fail-window            =
+===================================*/
+
+.fail-window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 360px;
+    background: url('../assets/img/content/404-bg.jpg') no-repeat center center;
+    background-size: cover;
+    padding-top: 130px;
+    padding-bottom: 90px;
+    h1 {
+        order: 2;
+        color: #fff;
+        @media screen and (max-width: 767px) {
+            text-align: center;
+        }
+    }
+    h2 {
+        position: relative;
+        order: 1;
+        color: #fff;
+        padding: 0 250px;
+        @media screen and (max-width: 767px) {
+            padding: 0 0;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 235px;
+            height: 3px;
+            background: #fff;
+            @media screen and (max-width: 767px) {
+                display: none;
+            }
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            width: 235px;
+            height: 3px;
+            background: #fff;
+            @media screen and (max-width: 767px) {
+                display: none;
+            }
+        }
+    }
+}
+
+
+/*=====  End of fail-window  ======*/

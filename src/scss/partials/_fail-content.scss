@@ -1,0 +1,39 @@
+/*====================================
+=            fail-content            =
+====================================*/
+
+.fail-content {
+    padding-top: 40px;
+    @media screen and (max-width: 992px) {
+        [class*="col-"] {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+h3.fail-content__title {
+    margin-bottom: 40px;
+}
+
+a.fail-content__title__page-link {
+    display: block;
+    margin-bottom: 15px;
+    max-width: 175px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &::after {
+        display: none;
+    }
+    span {
+        display: inline;
+        border-bottom: 1px solid transparent;
+        transition: border-bottom 0.3s ease-in;
+        &:hover {
+            border-bottom: 1px solid #f9b000;
+        }
+    }
+}
+
+
+/*=====  End of fail-content  ======*/

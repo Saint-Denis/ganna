@@ -20,7 +20,13 @@
             padding-bottom: 20px;
         }
     }
-    &--contacts .container-fluid  {
+
+    &--404 .page-content {
+        padding-top:0;
+    }
+    
+    &--contacts .container-fluid,
+    &--404 .container-fluid {
         max-width: 100%;
         width:100%;
         padding:0;
