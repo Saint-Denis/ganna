@@ -12,7 +12,7 @@
             @include font-size(48px, 52px);
         }
         @media screen and (max-width:767px) {
-            @include font-size(40px, 44px);
+            @include font-size(36px, 40px);
             margin-bottom: 25px;
         }
         span {
@@ -28,7 +28,7 @@
             @include font-size(40px, 44px);
         }
         @media screen and (max-width:767px) {
-            @include font-size(36px, 40px);
+            @include font-size(27px, 30px);
             margin-bottom: 15px;
         }
         span {
@@ -41,7 +41,7 @@
         margin: 0;
         margin-bottom: 15px;
         @media screen and (max-width: 767px) {
-            @include font-size(30px, 34px);
+            @include font-size(27px, 30px);
             margin-bottom: 15px;
         }
         span {

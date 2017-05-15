@@ -9,6 +9,7 @@
 }
 
 .map-icon {
+    position: relative;
     width: 50px;
     height: 50px;
     cursor: pointer;
@@ -18,6 +19,7 @@
     transition: all 0.35s ease-in;
     margin-right: 110px;
     margin-bottom: 25px;
+    z-index:1;
     &:last-child {
         margin-bottom: 0;
     }
@@ -29,11 +31,11 @@
 }
 
 .map-icon--plus {
-    background-image: url('../assets/img/icons/plus.png');
+    background-image: url('../assets/img/svg/plus.svg');
 }
 
 .map-icon--minus {
-    background-image: url('../assets/img/icons/minus.png');
+    background-image: url('../assets/img/svg/minus.svg');
 }
 
 .infobox__wrapper {
@@ -147,5 +149,9 @@
     display: none;
 }
 
+
+.gm-style > div {
+    z-index:50!important;
+}
 
 /*=====  End of map  ======*/

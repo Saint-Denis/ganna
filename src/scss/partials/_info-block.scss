@@ -4,8 +4,7 @@
 
 .info-block {
     padding: 25px 0;
-    padding-bottom:0;
-
+    padding-bottom: 0;
     @media screen and (max-width: 767px) {
         padding: 20px 0;
     }
@@ -24,7 +23,7 @@
     }
 }
 
-.info-block__item {
+a.info-block__item {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -75,6 +74,9 @@
         transform: scale(1, 0);
         transform-origin: 100% 0;
         transition: opacity 0.35s, transform 0.35s;
+        background: transparent;
+        width: auto;
+        height: auto;
         z-index: 2;
         @media screen and (max-width: 1110px) {
             display: none;
@@ -113,8 +115,10 @@
     transition: background 0.35s
 }
 
-a.info-block__link {
+span.info-block__link {
+
     position: relative;
+    @include inline-block(middle);
     z-index: 3;
     color: #fff;
     border-bottom: 1px solid transparent;
