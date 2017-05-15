@@ -53,6 +53,7 @@ $(document).ready(function() {
                 zoomControl: false,
                 mapTypeControl: false,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
+                pane: "mapPane",
                 scrollwheel: false
 
             }
@@ -60,7 +61,7 @@ $(document).ready(function() {
             //Инит карты
             var map = new google.maps.Map(document.querySelector('.map'), map_options);
 
-           
+
 
             //Рисуем разметку лейбла
             var infoWindowContent = [
@@ -235,7 +236,6 @@ $(document).ready(function() {
                 $('.infobox__preview').on('click', function() {
 
                     if (!$('.infobox__photo').hasClass("show")) {
-
                         $('.infobox__photo').addClass("show");
                         $('.infobox__preview').find('span').text("Закрыть фото");
 
@@ -280,7 +280,6 @@ $(document).ready(function() {
                 google.maps.event.trigger(map, "resize");
                 map.setCenter(center);
             });
-
         };
     }());
 

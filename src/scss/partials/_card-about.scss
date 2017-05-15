@@ -3,7 +3,7 @@
 ==================================*/
 
 .card-about__desc {
-    max-width: 270px;
+   
     @media screen and (max-width: 992px) {
         max-width: 100%;
     }
@@ -51,6 +51,7 @@
     padding-right: 5px;
     background: $bodybg;
     z-index: 1;
+    max-width:70%;
     @media screen and (max-width: 480px) {
         @include font-size(15px, 19px);
         white-space:nowrap;
@@ -58,6 +59,8 @@
 }
 
 .card-about__period {
+    display: flex;
+    align-items:flex-end;
     position: relative;
     padding-left: 5px;
     background: $bodybg;
@@ -70,7 +73,8 @@
 
 .card-about__perfomance {
     position: relative;
-    margin-right: -25px;
+    width: 210px;
+    height: 200px;
     @media screen and (max-width: 1300px) {
         margin-right: 0px;
     }

@@ -3,9 +3,23 @@
 ===========================*/
 
 .map {
+    position: relative;
     height: 100%;
     padding: 0;
     margin: 0;
+    // &::after {
+    //     content: '';
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 100%;
+    //     top: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     left: 0;
+    //     background: rgba(255, 255, 255, 0.5);
+    //     cursor-pointer:auto;
+    //     z-index:-1;
+    // }
 }
 
 .map-icon {
@@ -19,7 +33,7 @@
     transition: all 0.35s ease-in;
     margin-right: 110px;
     margin-bottom: 25px;
-    z-index:1;
+    z-index: 1;
     &:last-child {
         margin-bottom: 0;
     }
@@ -149,9 +163,9 @@
     display: none;
 }
 
-
 .gm-style > div {
-    z-index:50!important;
+    z-index: 50!important;
 }
+
 
 /*=====  End of map  ======*/
