@@ -69,7 +69,7 @@ $(document).ready(function() {
                     '<div class="infobox__preview">' +
                     '<span>Смотреть фото</span>' +
                     '<div class="infobox__photo">' +
-                    '<img src="../assets/img/content/map-photo.jpg">' +
+                    '<img src="./assets/img/content/map-photo.jpg">' +
                     '</div>' +
                     '</div>' +
                     '</div>' +
@@ -95,7 +95,7 @@ $(document).ready(function() {
                     '<div class="infobox__preview">' +
                     '<span>Смотреть фото</span>' +
                     '<div class="infobox__photo">' +
-                    '<img src="../assets/img/content/map-photo.jpg">' +
+                    '<img src="./assets/img/content/map-photo.jpg">' +
                     '</div>' +
                     '</div>' +
                     '</div>' +
@@ -121,7 +121,7 @@ $(document).ready(function() {
                     '<div class="infobox__preview">' +
                     '<span>Смотреть фото</span>' +
                     '<div class="infobox__photo">' +
-                    '<img src="../assets/img/content/map-photo.jpg">' +
+                    '<img src="./assets/img/content/map-photo.jpg">' +
                     '</div>' +
                     '</div>' +
                     '</div>' +
@@ -147,7 +147,7 @@ $(document).ready(function() {
                     '<div class="infobox__preview">' +
                     '<span>Смотреть фото</span>' +
                     '<div class="infobox__photo">' +
-                    '<img src="../assets/img/content/map-photo.jpg">' +
+                    '<img src="./assets/img/content/map-photo.jpg">' +
                     '</div>' +
                     '</div>' +
                     '</div>' +
@@ -177,7 +177,7 @@ $(document).ready(function() {
                 pixelOffset: new google.maps.Size(-145, -350),
                 zIndex: null,
                 closeBoxMargin: "15px 12px 0px 0px",
-                closeBoxURL: "../assets/img/svg/cancel.svg",
+                closeBoxURL: "./assets/img/svg/cancel.svg",
                 infoBoxClearance: new google.maps.Size(1, 1),
                 isHidden: false,
                 pane: "floatPane",
@@ -194,7 +194,7 @@ $(document).ready(function() {
 
             //Иконка маркера
             var icon = {
-                url: '../assets/img/svg/chick-marker.svg',
+                url: './assets/img/svg/chick-marker.svg',
                 size: new google.maps.Size(35, 35),
                 origin: new google.maps.Point(0, 0),
                 anchor: new google.maps.Point(0, 32)

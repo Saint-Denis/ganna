@@ -77,18 +77,7 @@ gulp.task("styles", function() {
         }))
         .pipe(sourcemaps.init())
         .pipe(scss())
-        .pipe(postcss([
-            autoprefixer({
-                browsers: [
-                    "last 2 versions",
-                    "last 2 Chrome versions",
-                    "last 2 Firefox versions",
-                    "last 2 Opera versions",
-                    "last 2 Edge versions"
-                ]
-            })
-
-        ]))
+        .pipe(postcss([autoprefixer()]))
         .pipe(mqsort())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./build/css'))
