@@ -3,7 +3,7 @@
 ===================================*/
 .social-link svg {
 	width: 41px;
-	height:40px;
+	height:41px;
 	fill:#f0f0f0;
 	@include transition(fill);
 
@@ -32,8 +32,12 @@
 	@include transition(fill);
 }
 
-.social-link--vk:hover svg,
-.social-link--fb:hover svg, {
+.social-link--vk:hover svg {
+	fill:#6777c7;
+	@include transition(fill);
+}
+
+.social-link--fb:hover svg {
 	fill:#4f4d9c;
 	@include transition(fill);
 }

@@ -54,7 +54,7 @@
     max-width:70%;
     @media screen and (max-width: 480px) {
         @include font-size(15px, 19px);
-        white-space:nowrap;
+        max-width:75%;
     }
 }
 
@@ -85,7 +85,7 @@
 
 .card-about__svg-icon {
     position: relative;
-    width: 100%;
+    width: 210px;
     height: 100%;
     fill: #e2e2e2;
     z-index: 1;
