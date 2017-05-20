@@ -166,6 +166,10 @@
     }
 }
 
+.mobile-nav__link.mobile-nav__empty::after {
+
+    display: none;
+}
 
 
 .mobile-nav__table {

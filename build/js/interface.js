@@ -488,14 +488,14 @@ $(document).ready(function() {
             }]
         });
 
-        // $('.card-thumbnails .slick-slide').removeClass('slick-active');
-        // $('.card-thumbnails .slick-slide').eq(0).addClass('slick-active');
+        $('.card-thumbnails .slick-slide').removeClass('slick-active');
+        $('.card-thumbnails .slick-slide').eq(0).addClass('slick-active');
 
-        // $('.card-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-        //     var mySlideNumber = nextSlide;
-        //     $('.card-thumbnails .slick-slide').removeClass('slick-active');
-        //     $('.card-thumbnails .slick-slide').eq(mySlideNumber).addClass('slick-active');
-        // });
+        $('.card-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+            var mySlideNumber = nextSlide;
+            $('.card-thumbnails .slick-slide').removeClass('slick-active');
+            $('.card-thumbnails .slick-slide').eq(mySlideNumber).addClass('slick-active');
+        });
 
     }());
 
@@ -545,14 +545,14 @@ $(document).ready(function() {
 
         });
 
-        //Аккордеон первого уровня
-        $('.mobile-nav__link:not(.mobile-nav__link--empty)').on('click', function(e) {
+        //Аккордеон. Открытие второго уровня
+        $('.mobile-nav__link:not(.mobile-nav__empty)').on('click', function(e) {
             e.preventDefault();
             var $this = $(this),
                 item = $this.closest('.mobile-nav__item'),
                 list = $this.closest('.mobile-nav__list'),
                 items = list.find('.mobile-nav__item'),
-                content = item.find('.mobile-inner'),
+                content = item.find('>.mobile-inner'),
                 otherContent = list.find('.mobile-inner'),
                 duration = 400;
 
@@ -574,16 +574,19 @@ $(document).ready(function() {
             };
         });
 
+        
 
-        //Аккордеон второго уровня
-        $('.mobile-inner__title-link').on('click', function(e) {
+
+        //Аккордеон. Открытие меню разделов
+        $('.mobile-inner__link--section:not(.mobile-nav__empty)').on('click', function(e) {
             e.preventDefault();
             var $this = $(this),
-                item = $this.closest('.mobile-inner__level2-item'),
-                list = $this.closest('.mobile-inner__level2'),
-                items = list.find('.mobile-inner__level2-item'),
-                content = item.find('.mobile-inner__list'),
-                otherContent = list.find('.mobile-inner__list'),
+                item = $this.closest('.mobile-inner__item'),
+                list = $this.closest('.mobile-inner--section'),
+                items = list.find('.mobile-inner__item'),
+                content = item.find('>.mobile-inner'),
+                otherContent = list.find('.mobile-inner'),
+                menuLevel3 = list.find('.mobile-inner__link--lv3').parent('.mobile-inner__item');
                 duration = 400;
 
             if (!item.hasClass('active')) {
@@ -594,20 +597,19 @@ $(document).ready(function() {
                 content.stop(true, true).slideDown(duration);
             } else {
                 content.stop(true, true).slideUp(duration);
-                item.stop(true, true).removeClass('active');
+                item.add(menuLevel3).stop(true, true).removeClass('active');
             };
         });
 
 
         //Аккордеон третьего уровня
-        $('.mobile-inner__link--lv3').on('click', function(e) {
+        $('.mobile-inner__link--lv3:not(.mobile-nav__empty)').on('click', function(e) {
             e.preventDefault();
             var $this = $(this),
                 item = $this.closest('.mobile-inner__item'),
-                list = $this.closest('.mobile-inner__list'),
+                list = $this.closest('.mobile-inner'),
                 items = list.find('.mobile-inner__item'),
-                content = item.find('.mobile-inner__sub'),
-                otherContent = list.find('.mobile-inner__sub'),
+                content = item.find('.mobile-inner--lv-3'),
                 duration = 400;
 
 
@@ -615,7 +617,6 @@ $(document).ready(function() {
                 items.removeClass('active');
                 item.addClass('active');
 
-                otherContent.stop(true, true).slideUp(duration);
                 content.stop(true, true).slideDown(duration);
             } else {
                 content.stop(true, true).slideUp(duration);
